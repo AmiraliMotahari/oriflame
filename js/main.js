@@ -83,4 +83,16 @@ document.querySelector("div.right>div.shoppingButton").addEventListener("mousele
 });
 
 //menu page
-
+let activator = document.querySelectorAll("div.content");
+let target = document.querySelector("div.content>div.page");
+activator.forEach((elem)=>{
+    elem.addEventListener("mouseenter",function(){
+        deactivator();
+        elem.childNodes[3].classList.add("activator");
+    })
+})
+function deactivator(){
+    activator.forEach((elem)=>{
+        elem.childNodes[3].classList.remove("activator");
+    })
+}
