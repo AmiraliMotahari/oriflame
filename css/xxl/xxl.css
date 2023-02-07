@@ -275,8 +275,7 @@ section.mainContainer > nav {
           right: 0;
           display: none;
           border-left: 2px solid rgba(0, 0, 0, 0.05);
-          overflow: auto;
-          background-color: red; }
+          overflow: auto; }
         section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:first-of-type > div.page {
           display: block; }
         section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox {
@@ -321,34 +320,40 @@ section.mainContainer > nav {
               margin: 0 auto;
               text-transform: uppercase;
               border-bottom: 2px solid var(--tDark); }
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox > a:last-of-type:hover {
+                color: var(--tDark); }
           section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox > p {
             text-align: center;
             text-transform: capitalize;
             font-size: 14px;
             font-weight: 400;
             color: var(--t6); }
-        section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page {
+        section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > a {
+          display: block;
+          width: calc(100% / 4.75);
+          text-decoration: none;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > a > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; }
+          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > a > span {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--tWhite);
+            text-align: center;
+            text-transform: capitalize;
+            font-size: 30px;
+            font-weight: 700; }
+        section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(4) > div.page {
           justify-content: center;
           align-items: center; }
-          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > a {
-            display: block;
-            width: calc(100% / 4.75);
-            text-decoration: none;
-            position: relative; }
-            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > a > img {
-              width: 100%;
-              object-fit: cover; }
-            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > a > span {
-              display: block;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              color: var(--tWhite);
-              text-align: center;
-              text-transform: capitalize;
-              font-size: 30px;
-              font-weight: 700; }
 
 .activator {
-  display: flex !important; }
+  display: block !important; }
