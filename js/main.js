@@ -44,6 +44,8 @@ function menuButtonDeactivator(){
 menuButton.addEventListener("click",function(){
     if(flag === 0){
         menuButtonActivator();
+        ourStoryPageDeactivator();
+        joinUsPageDeactivator();
     }
     else{
         menuButtonDeactivator();
@@ -88,8 +90,10 @@ shoppingBag.addEventListener("mouseenter",function(){
     document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-solid");
 
     shoppingbPage.classList.add("activator");
-    document.querySelector("div.shoppingBagPage>div.shoppingContainer").style.transform="scale(1,1)";
+    document.querySelector("div.shoppingBagPage>div.shoppingContainer").style.opacity="1";
     menuButtonDeactivator();
+    ourStoryPageDeactivator();
+    joinUsPageDeactivator();
 
 });
 shoppingBag.addEventListener("mouseleave",function(){
@@ -101,7 +105,7 @@ shoppingBag.addEventListener("click",function(){
 });
 
 document.querySelector("div.shoppingBagPage>div.shoppingContainer").addEventListener("mouseleave",function(){
-    this.transform = "scale(0,0)";
+    this.opacity = "1";
     shoppingbPage.style.display = "none";
     shoppingbPage.classList.remove("activator");
 });
@@ -121,3 +125,41 @@ function deactivator(){
         elem.childNodes[3].classList.remove("activator");
     })
 }
+
+//ourstory page
+let ourStoryButton = document.getElementById("ourStory");
+let ourStoryPage = document.querySelector("div.ourStoryPage");
+
+function ourStoryPageActivator() {
+  ourStoryPage.classList.add("activator");
+}
+function ourStoryPageDeactivator() {
+  ourStoryPage.classList.remove("activator");
+}
+
+ourStoryButton.addEventListener("click",function(){
+    ourStoryPage.classList.toggle("activator");
+    menuButtonDeactivator();
+    joinUsPageDeactivator();
+});
+// document.querySelector("div.ourStoryPage>div.ourStoryContainer").addEventListener("mouseleave",function(){
+//     ourStoryPageDeactivator();
+// });
+
+
+//join us page
+let joinUsButton = document.getElementById("joinUs");
+let joinUsPage = document.querySelector("div.joinUsPage");
+
+function joinUsPageActivator() {
+    joinUsPage.classList.add("activator");
+}
+function joinUsPageDeactivator() {
+    joinUsPage.classList.remove("activator");
+}
+
+joinUsButton.addEventListener("click", function () {
+    joinUsPage.classList.toggle("activator");
+    menuButtonDeactivator();
+    ourStoryPageDeactivator();
+});
