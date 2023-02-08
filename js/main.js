@@ -112,8 +112,8 @@ document.querySelector("div.shoppingBagPage>div.shoppingContainer").addEventList
 
 
 //menu page
-let activator = document.querySelectorAll("div.content");
-let target = document.querySelector("div.content>div.page");
+let activator = document.querySelectorAll("div.menuContainer>div.content");
+let target = document.querySelector("div.menuContainer>div.content>div.page");
 activator.forEach((elem)=>{
     elem.addEventListener("mouseenter",function(){
         deactivator();
