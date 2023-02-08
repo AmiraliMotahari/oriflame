@@ -137,7 +137,6 @@ section.mainContainer > nav {
         font-size: 20px;
         visibility: hidden; }
   section.mainContainer > nav > div.menuPage {
-    display: none;
     width: 100vw;
     height: calc(100vh - 80px);
     position: absolute;
@@ -276,6 +275,48 @@ section.mainContainer > nav {
           display: none;
           border-left: 2px solid rgba(0, 0, 0, 0.05);
           overflow: auto; }
+          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            padding: 20px 20px 20px 45px; }
+            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > h2 {
+              display: flex;
+              font-size: 17px;
+              font-weight: 700;
+              text-transform: capitalize;
+              flex-flow: row wrap;
+              justify-content: left;
+              align-items: center;
+              column-gap: 10px;
+              margin-bottom: 30px; }
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > h2:hover {
+                color: var(--tOriGreen); }
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > h2:hover > span {
+                  color: var(--tOriGreen); }
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > h2 > span {
+                display: inline-block; }
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > h2 > span > svg {
+                  width: 28px;
+                  height: 28px;
+                  color: var(--tDark); }
+            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group {
+              display: flex;
+              flex-flow: column;
+              justify-content: left;
+              align-items: left;
+              margin-bottom: 30px;
+              padding: 0 0 30px 5px; }
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > a {
+                text-decoration: none;
+                color: var(--tDark);
+                font-size: 14px;
+                font-weight: 400;
+                margin: 0 0 15px; }
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > a:hover {
+                  color: var(--tOriGreen);
+                  font-weight: 700; }
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > a:first-of-type, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > a:first-of-type, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > a:first-of-type, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > a:first-of-type {
+                  font-weight: 700; }
         section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:first-of-type > div.page {
           display: block; }
         section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox {
@@ -351,9 +392,6 @@ section.mainContainer > nav {
             text-transform: capitalize;
             font-size: 30px;
             font-weight: 700; }
-        section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(4) > div.page {
-          justify-content: center;
-          align-items: center; }
 
 .activator {
   display: block !important; }
