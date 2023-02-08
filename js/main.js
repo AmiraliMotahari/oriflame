@@ -1,21 +1,20 @@
 //menu button
 let flag = 0;
+ let menuButton = document.querySelector("div.menuButton");
 
-document.querySelector("div.menuButton").addEventListener("click",function(e){
-    let elOne = document.querySelector("div.besHov");
-    if (flag === 0) {
-        document.getElementById("midLine").style.left="100%";
-        document.getElementById("midLine").style.opacity="0";
+function menuButtonActivator(){
+        document.getElementById("midLine").style.left = "100%";
+        document.getElementById("midLine").style.opacity = "0";
 
-        document.getElementById("topLine").style.rotate="45deg";
-        document.getElementById("topLine").style.top="50%";
-        document.getElementById("topLine").style.translate="0,-50%";
+        document.getElementById("topLine").style.rotate = "45deg";
+        document.getElementById("topLine").style.top = "50%";
+        document.getElementById("topLine").style.translate = "0,-50%";
 
-        document.getElementById("botLine").style.rotate="-45deg";
-        document.getElementById("botLine").style.top="50%";
-        document.getElementById("botLine").style.translate="0,-50%";
+        document.getElementById("botLine").style.rotate = "-45deg";
+        document.getElementById("botLine").style.top = "50%";
+        document.getElementById("botLine").style.translate = "0,-50%";
 
-        document.querySelector("div.menuPage").style.display="block";
+        document.querySelector("div.menuPage").style.display = "block";
 
         // elOne.style.background= "#e5e5e526";
         // elOne.addEventListener("mouseleave", function () {
@@ -23,23 +22,31 @@ document.querySelector("div.menuButton").addEventListener("click",function(e){
         //   });
         // document.querySelector("div.besHov>div.page").style.display = "block";
 
-        flag++;
+        flag = 1;
+       }
+function menuButtonDeactivator(){
+            document.getElementById("midLine").style.left = "";
+            document.getElementById("midLine").style.opacity = "1";
+
+            document.getElementById("topLine").style.rotate = "";
+            document.getElementById("topLine").style.top = "";
+            document.getElementById("topLine").style.translate = "";
+
+            document.getElementById("botLine").style.rotate = "";
+            document.getElementById("botLine").style.top = "";
+            document.getElementById("botLine").style.translate = "";
+
+            document.querySelector("div.menuPage").style.display = "";
+
+            flag = 0;
+        }
+
+menuButton.addEventListener("click",function(){
+    if(flag === 0){
+        menuButtonActivator();
     }
-    else{  
-        document.getElementById("midLine").style.left="";
-        document.getElementById("midLine").style.opacity="1";
-
-        document.getElementById("topLine").style.rotate="";
-        document.getElementById("topLine").style.top="";
-        document.getElementById("topLine").style.translate="";
-
-        document.getElementById("botLine").style.rotate="";
-        document.getElementById("botLine").style.top="";
-        document.getElementById("botLine").style.translate="";
-
-        document.querySelector("div.menuPage").style.display="";
-
-        flag--;
+    else{
+        menuButtonDeactivator();
     }
 });
 
@@ -82,6 +89,7 @@ shoppingBag.addEventListener("mouseenter",function(){
 
     shoppingbPage.classList.add("activator");
     document.querySelector("div.shoppingBagPage>div.shoppingContainer").style.transform="scale(1,1)";
+    menuButtonDeactivator();
 
 });
 shoppingBag.addEventListener("mouseleave",function(){

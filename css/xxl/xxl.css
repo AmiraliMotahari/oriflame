@@ -457,5 +457,32 @@ section.mainContainer > nav {
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
           transition: 300ms; }
 
+section.mainContainer > div.ourStoryPage {
+  background-color: red;
+  width: 100vw;
+  height: calc(100% - 80px);
+  position: absolute;
+  top: 80px;
+  left: 0; }
+  section.mainContainer > div.ourStoryPage > .ourStoryContainer {
+    width: 100%;
+    background-color: var(--bgWhite);
+    display: flex;
+    column-gap: 5px;
+    justify-content: center;
+    align-items: start;
+    padding: 0 40px; }
+    section.mainContainer > div.ourStoryPage > .ourStoryContainer > .content {
+      width: 31%; }
+      section.mainContainer > div.ourStoryPage > .ourStoryContainer > .content > a {
+        position: relative; }
+        section.mainContainer > div.ourStoryPage > .ourStoryContainer > .content > a > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+        section.mainContainer > div.ourStoryPage > .ourStoryContainer > .content > a > span {
+          position: absolute;
+          display: none; }
+
 .activator {
   display: block !important; }
