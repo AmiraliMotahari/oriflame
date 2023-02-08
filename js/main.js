@@ -17,11 +17,11 @@ document.querySelector("div.menuButton").addEventListener("click",function(e){
 
         document.querySelector("div.menuPage").style.display="block";
 
-        elOne.style.background= "#e5e5e526";
-        elOne.addEventListener("mouseleave", function () {
-            this.style.background = "";
-          });
-        document.querySelector("div.besHov>div.page").style.display = "block";
+        // elOne.style.background= "#e5e5e526";
+        // elOne.addEventListener("mouseleave", function () {
+        //     this.style.background = "";
+        //   });
+        // document.querySelector("div.besHov>div.page").style.display = "block";
 
         flag++;
     }
@@ -73,14 +73,31 @@ document.addEventListener("click",function(e){
 
 
 //shopping bag
-document.querySelector("div.right>div.shoppingButton").addEventListener("mouseenter",function(){
+let shoppingBag = document.querySelector("div.right>div.shoppingButton");
+let shoppingbPage = document.querySelector("div.shoppingBagPage");
+
+shoppingBag.addEventListener("mouseenter",function(){
     document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-light");
     document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-solid");
+
+    shoppingbPage.classList.add("activator");
+    document.querySelector("div.shoppingBagPage>div.shoppingContainer").style.transform="scale(1,1)";
+
 });
-document.querySelector("div.right>div.shoppingButton").addEventListener("mouseleave",function(){
+shoppingBag.addEventListener("mouseleave",function(){
     document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-solid");
     document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-light");
 });
+shoppingBag.addEventListener("click",function(){
+    document.querySelector("div.shoppingBagPage").classList.add("activator");
+});
+
+document.querySelector("div.shoppingBagPage>div.shoppingContainer").addEventListener("mouseleave",function(){
+    this.transform = "scale(0,0)";
+    shoppingbPage.style.display = "none";
+    shoppingbPage.classList.remove("activator");
+});
+
 
 //menu page
 let activator = document.querySelectorAll("div.content");

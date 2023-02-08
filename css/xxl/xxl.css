@@ -137,6 +137,7 @@ section.mainContainer > nav {
         font-size: 20px;
         visibility: hidden; }
   section.mainContainer > nav > div.menuPage {
+    display: none;
     width: 100vw;
     height: calc(100vh - 80px);
     position: absolute;
@@ -166,6 +167,9 @@ section.mainContainer > nav {
           position: relative; }
           section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > a:hover {
             background-color: #e5e5e526; }
+        section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(14) > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(13) > a:hover {
+          background-color: unset;
+          color: var(--tOriGreen); }
         section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(4) > a:hover {
           background-color: var(--bsidh1); }
         section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(5) > a:hover {
@@ -305,7 +309,7 @@ section.mainContainer > nav {
               justify-content: left;
               align-items: left;
               margin-bottom: 30px;
-              padding: 0 0 30px 5px; }
+              padding-left: 5px; }
               section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > a {
                 text-decoration: none;
                 color: var(--tDark);
@@ -392,6 +396,66 @@ section.mainContainer > nav {
             text-transform: capitalize;
             font-size: 30px;
             font-weight: 700; }
+  section.mainContainer > nav > div.shoppingBagPage {
+    display: none;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    transition: 300ms; }
+    section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer {
+      width: 400px;
+      height: 100%;
+      background-color: var(--bgWhite);
+      margin-left: auto;
+      position: relative;
+      transform: scale(0, 0);
+      transition: 300ms; }
+      section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer > h2 {
+        padding: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: var(--tDark); }
+      section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer > div.midContent {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center; }
+        section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer > div.midContent > h3 {
+          font-size: 20px;
+          font-weight: 700;
+          text-transform: capitalize;
+          color: var(--t5);
+          margin-bottom: 10px; }
+        section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer > div.midContent > p {
+          font-size: 14px;
+          font-weight: 400;
+          text-transform: capitalize;
+          color: var(--t5); }
+      section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer > a {
+        display: block;
+        width: calc(100% - 40px);
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        text-align: center;
+        background-color: #7cb996;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: var(--tWhite);
+        padding: 11px 0;
+        border-radius: 25px;
+        transition: 300ms; }
+        section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer > a:hover {
+          transform: scale(1.01, 1.01);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          transition: 300ms; }
 
 .activator {
   display: block !important; }
