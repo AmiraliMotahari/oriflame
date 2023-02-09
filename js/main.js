@@ -46,6 +46,7 @@ menuButton.addEventListener("click",function(){
         menuButtonActivator();
         ourStoryPageDeactivator();
         joinUsPageDeactivator();
+        logInPageDeactivator();
     }
     else{
         menuButtonDeactivator();
@@ -94,6 +95,7 @@ shoppingBag.addEventListener("mouseenter",function(){
     menuButtonDeactivator();
     ourStoryPageDeactivator();
     joinUsPageDeactivator();
+    logInPageDeactivator();
 
 });
 shoppingBag.addEventListener("mouseleave",function(){
@@ -141,6 +143,7 @@ ourStoryButton.addEventListener("click",function(){
     ourStoryPage.classList.toggle("activator");
     menuButtonDeactivator();
     joinUsPageDeactivator();
+    logInPageDeactivator();
 });
 // document.querySelector("div.ourStoryPage>div.ourStoryContainer").addEventListener("mouseleave",function(){
 //     ourStoryPageDeactivator();
@@ -162,4 +165,25 @@ joinUsButton.addEventListener("click", function () {
     joinUsPage.classList.toggle("activator");
     menuButtonDeactivator();
     ourStoryPageDeactivator();
+    logInPageDeactivator();
+});
+
+
+
+//login
+let logInButton = document.getElementById("logIn");
+let logInPage = document.querySelector("div.logInPage");
+
+function logInPageActivator() {
+  logInPage.classList.add("activator");
+}
+function logInPageDeactivator() {
+  logInPage.classList.remove("activator");
+}
+
+logInButton.addEventListener("click", function () {
+    logInPage.classList.toggle("activator");
+    menuButtonDeactivator();
+    ourStoryPageDeactivator();
+    joinUsPageDeactivator;
 });
