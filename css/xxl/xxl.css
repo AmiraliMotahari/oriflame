@@ -143,14 +143,14 @@ section.mainContainer > nav {
     position: absolute;
     top: 80px;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto; }
     section.mainContainer > nav > div.menuPage > div.menuContainer {
       width: 100%;
-      height: 80%;
+      height: 590px;
       flex-flow: row wrap;
       background-color: var(--bgWhite);
-      position: relative;
-      overflow: auto; }
+      position: relative; }
       section.mainContainer > nav > div.menuPage > div.menuContainer > div.content {
         width: 248px;
         margin-bottom: 5px; }
@@ -277,8 +277,7 @@ section.mainContainer > nav {
           top: 0;
           right: 0;
           display: none;
-          border-left: 2px solid rgba(0, 0, 0, 0.05);
-          overflow: auto; }
+          border-left: 2px solid rgba(0, 0, 0, 0.05); }
           section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -467,56 +466,61 @@ section.mainContainer > div.ourStoryPage {
   background-color: rgba(0, 0, 0, 0.5); }
   section.mainContainer > div.ourStoryPage > .ourStoryContainer {
     width: 100%;
-    height: 45%;
+    height: 333px;
     background-color: var(--bgWhite);
-    display: flex;
-    flex-flow: row wrap;
-    column-gap: 5px;
-    justify-content: center;
-    align-items: start;
-    padding: 0 40px 5px;
+    display: block;
+    padding: 0 90px 5px;
     overflow: auto; }
-    section.mainContainer > div.ourStoryPage > .ourStoryContainer > .content {
-      width: 31%;
-      overflow: hidden;
-      margin-bottom: 5px; }
-      section.mainContainer > div.ourStoryPage > .ourStoryContainer > .content > a {
+    section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-flow: row nowrap;
+      column-gap: 5px;
+      justify-items: center;
+      align-items: center; }
+      section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content {
         width: 100%;
-        display: block;
-        position: relative;
-        text-decoration: none;
-        overflow: hidden; }
-        section.mainContainer > div.ourStoryPage > .ourStoryContainer > .content > a > img {
+        height: 100%;
+        margin-bottom: 5px; }
+        section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a {
           width: 100%;
           height: 100%;
-          object-fit: cover;
-          position: relative; }
-        section.mainContainer > div.ourStoryPage > .ourStoryContainer > .content > a::before {
-          content: "";
-          width: 100%;
-          height: 99%;
-          background-color: rgba(0, 0, 0, 0.5);
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 2;
-          opacity: 0;
-          transition: 300ms; }
-        section.mainContainer > div.ourStoryPage > .ourStoryContainer > .content > a:hover::before {
-          opacity: 1;
-          transition: 300ms; }
-        section.mainContainer > div.ourStoryPage > .ourStoryContainer > .content > a > span {
-          position: absolute;
           display: block;
-          width: 100%;
-          font-size: 40px;
-          font-weight: 700;
-          text-transform: capitalize;
-          text-align: center;
-          top: 50%;
-          transform: translateY(-50%);
-          color: var(--tWhite);
-          z-index: 2; }
+          position: relative;
+          text-decoration: none;
+          overflow: hidden; }
+          section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative; }
+          section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            opacity: 0;
+            transition: 300ms; }
+          section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a:hover::before {
+            opacity: 1;
+            transition: 300ms; }
+          section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a > span {
+            position: absolute;
+            display: block;
+            width: 100%;
+            font-size: 40px;
+            font-weight: 700;
+            text-transform: capitalize;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--tWhite);
+            z-index: 2; }
 
 section.mainContainer > div.joinUsPage {
   display: none;
@@ -528,32 +532,28 @@ section.mainContainer > div.joinUsPage {
   background-color: rgba(0, 0, 0, 0.5); }
   section.mainContainer > div.joinUsPage > div.joinUsContainer {
     width: 100%;
-    height: 55%;
+    height: 376px;
     background-color: var(--bgWhite);
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    justify-items: center;
     align-items: start;
-    padding: 0 40px; }
+    padding: 0 40px;
+    overflow: hidden; }
     section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
       align-items: center;
       column-gap: 5px; }
       section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content {
-        width: 95%;
-        overflow: hidden;
-        justify-self: end; }
-        section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content:last-of-type {
-          justify-self: start; }
+        width: 680px; }
         section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content > a {
-          width: 100%;
           display: block;
+          width: 100%;
           position: relative;
-          text-decoration: none;
-          overflow: hidden; }
+          text-decoration: none; }
           section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content > a > img {
             width: 100%;
             height: 100%;
@@ -599,7 +599,8 @@ section.mainContainer > div.joinUsPage {
       font-family: 400;
       color: var(--tDark);
       text-decoration-line: underline;
-      transition: 300ms; }
+      transition: 300ms;
+      margin: 10px 0; }
       section.mainContainer > div.joinUsPage > div.joinUsContainer > a:hover {
         color: var(--t9);
         transition: 300ms; }
@@ -607,7 +608,7 @@ section.mainContainer > div.joinUsPage {
 section.mainContainer > div.logInPage {
   display: none;
   width: 100vw;
-  height: calc(100% - 80px);
+  height: calc(100vh - 80px);
   position: absolute;
   top: 80px;
   left: 0;
@@ -615,7 +616,8 @@ section.mainContainer > div.logInPage {
   section.mainContainer > div.logInPage > div.logInContainer {
     width: 280px;
     height: 100%;
-    background-color: var(--tWhite); }
+    background-color: var(--tWhite);
+    overflow: auto; }
     section.mainContainer > div.logInPage > div.logInContainer > div.wrapper {
       display: flex;
       flex-flow: column wrap;
@@ -651,12 +653,12 @@ section.mainContainer > div.logInPage {
           margin-bottom: 10px;
           padding: 4px 0 5px; }
           section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form > #userEmail:hover, section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form #userPass:hover {
-            border-bottom: 0.5px solid var(--tDark); }
+            border-bottom: 1px solid var(--tDark); }
         section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form > #submitLogInButton {
           all: unset;
           width: 100%;
           height: 40px;
-          background-color: #68BB93;
+          background-color: var(--tSuccessGreen);
           color: var(--tWhite);
           font-size: 14px;
           font-weight: 700;
@@ -741,3 +743,6 @@ section.mainContainer > div.logInPage {
 
 .activator {
   display: block !important; }
+
+.successColor {
+  color: var(--tSuccessGreen); }
