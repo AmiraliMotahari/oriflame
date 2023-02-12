@@ -9,12 +9,15 @@
     "settings": "node-sass -w sass/settings.scss -o css/ -r",
     "settingsMinify": "node-sass -w sass/settings.scss -o css/ -r --output-style compressed",
     "xxl": "node-sass -w sass/xxl.scss -o css/xxl; -r",
-    "xxlMinify": "node-sass -w sass/xxl.scss -o css/xxl -r --output-style compressed"
+    "xxlMinify": "node-sass -w sass/xxl.scss -o css/xxl -r --output-style compressed",
+    "xl": "node-sass -w sass/xl.scss -o css/xl; -r",
+    "xlMinify": "node-sass -w sass/xl.scss -o css/xl -r --output-style compressed"
   },
   "author": "Amirali Motahari",
   "license": "ISC",
   "dependencies": {
     "live-server": "^1.2.2",
-    "node-sass": "^8.0.0"
+    "node-sass": "^8.0.0",
+    "swiper": "^9.0.4"
   }
 }

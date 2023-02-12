@@ -7,6 +7,7 @@
     <title>Oriflame</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./FontAwesome.Pro.6.2.1/css/all.css">
+    <link rel="stylesheet" href="./swiper/swiper-bundle.min.css">
 </head>
 <body>
     <header>
@@ -555,9 +556,66 @@
                 </div>
             </div>
         </section>
+        <section class="swiprContainer">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slideWrapper">
+                            <a href="#"><img src="./img/swiperImages/s1.jpeg" alt="SwiperImages"></a>
+                            <div class="contentWrapper">
+                                <div class="swiperContent">
+                                    <h4>new love potion ruby</h4>
+                                    <h3>own your sensuality</h3>
+                                    <div class="positioner">
+                                        <a href="#"> shop now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="menuTabsContainer">
+            <div class="tabsContainer">
+                <div class="tab"><a href="#"><span>
+                    <svg class="catalogueIcon" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="CatalogueIcon"><path d="m18.645 4.407-5.691.758a1.68 1.68 0 0 0-.954.482 1.674 1.674 0 0 0-.955-.482l-5.689-.758A1.398 1.398 0 0 0 3.75 5.813v11.344a1.72 1.72 0 0 0 1.469 1.679l5.69.758a1.375 1.375 0 0 0 1.09-.324 1.377 1.377 0 0 0 1.089.324l5.691-.758a1.72 1.72 0 0 0 1.469-1.679V5.813c0-.863-.736-1.526-1.605-1.406zm-7.533 14.169-5.755-.763a.698.698 0 0 1-.575-.657V5.812c0-.226.149-.384.427-.384h.011l5.69.758a.7.7 0 0 1 .575.657v11.344c0 .229-.153.389-.373.389zm8.107-1.42a.7.7 0 0 1-.574.657l-5.756.763c-.22 0-.373-.16-.373-.389V6.843c0-.308.268-.615.574-.657l5.756-.762c.22 0 .373.159.373.388v11.344z"></path><path d="m17.33 7.88-3.062.41a.516.516 0 1 0 .137 1.022l3.062-.41a.517.517 0 0 0 .443-.58.517.517 0 0 0-.58-.442zm0 3.094-3.062.409a.516.516 0 1 0 .137 1.022l3.062-.409a.517.517 0 0 0 .443-.58.52.52 0 0 0-.58-.442zm0 3.093-3.062.409a.516.516 0 1 0 .137 1.022l3.062-.409a.516.516 0 1 0-.137-1.022zM8.789 7.862l-1.177-.157c-.882-.121-1.606.543-1.606 1.406v4.726a1.72 1.72 0 0 0 1.469 1.679l1.178.157a1.397 1.397 0 0 0 1.606-1.406V9.541c0-.831-.646-1.569-1.47-1.679zm.44 6.405c0 .229-.153.389-.373.389l-1.244-.162a.698.698 0 0 1-.575-.657V9.111c0-.226.149-.384.427-.384h.011l1.178.157a.7.7 0 0 1 .575.657v4.726z"></path></svg>
+                </span>eCatalogue</a></div>
+                <div class="tab"><a href="#">Skin care</a></div>
+                <div class="tab"><a href="#">Make-Up</a></div>
+                <div class="tab"><a href="#">Fragrance</a></div>
+                <div class="tab"><a href="#">bath & body</a></div>
+                <div class="tab"><a href="#">hair</a></div>
+                <div class="tab"><a href="#">accessories</a></div>
+                <div class="tab"><a href="#">Wellness</a></div>
+                <div class="tab"><a href="#">men</a></div>
+                <div class="tab"><a href="#">kids & baby</a></div>
+            </div>
+        </section>
     </header>
     <main></main>
     <footer></footer>
     <script src="./js/main.js"></script>
+    <script src="./swiper/swiper-bundle.min.js"></script>
+     <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 0,
+        centeredSlides: true,
+        autoplay: {
+            delay: 10000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        });
+    </script>
 </body>
 </html>

@@ -113,7 +113,7 @@ function shoppingBagPageActivator(){
   logInPageDeactivator();
 });
 shoppingBag.addEventListener("click", function () {
-  document.querySelector("div.shoppingBagPage").classList.add("activator");
+  document.querySelector("div.shoppingBagPage").classList.toggle("activator");
   menuButtonDeactivator();
   ourStoryPageDeactivator();
   joinUsPageDeactivator();
@@ -121,12 +121,11 @@ shoppingBag.addEventListener("click", function () {
 });
 }
 function shoppingBagPageDeactivator(){
-  shoppingBag.addEventListener("mouseleave", function () {
-  document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-solid");
-  document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-light");
-});
+    document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-solid");
+    document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-light");
 }
 shoppingBagPageActivator();
+shoppingBag.addEventListener("mouseleave", shoppingBagPageDeactivator);
 
 
 document
