@@ -229,3 +229,23 @@ userPassAuth.addEventListener("input",function(){
    userEmailAuth.style.borderBottomColor = "";
 });
 
+//support button 
+let supBtn = document.querySelector("section.supportBtn");
+let supportPage = document.querySelector("div.supportPage");
+let closeBtn = document.getElementById("supportCloseBtn");
+
+function supportPageActivator(){
+  supportPage.style.bottom = "-10px";
+}
+function supportPageDeactivator() {
+  supportPage.style.bottom = "";
+}
+
+supBtn.addEventListener("click",function(){
+  supportPageActivator();
+});
+
+closeBtn.addEventListener("click",function(){
+  supportPageDeactivator();
+});
+console.log(closeBtn);

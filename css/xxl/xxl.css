@@ -782,7 +782,6 @@ section.swiprContainer {
               object-fit: cover; }
           section.swiprContainer .swiper > .swiper-wrapper > .swiper-slide > div.slideWrapper > div.contentWrapper {
             width: 100%;
-            padding: 0 90px;
             position: absolute;
             top: 50%;
             left: 0;
@@ -792,7 +791,7 @@ section.swiprContainer {
               flex-flow: column;
               justify-content: center;
               align-items: end;
-              padding: 0 90px; }
+              padding: 0 calc(100% / calc(1536/180)); }
               section.swiprContainer .swiper > .swiper-wrapper > .swiper-slide > div.slideWrapper > div.contentWrapper > .swiperContent > h4 {
                 width: 450px;
                 font-size: 14px;
@@ -836,6 +835,8 @@ section.swiprContainer {
                     background-color: #ffffff40;
                     color: var(--tDark);
                     transition: 300ms; }
+        section.swiprContainer .swiper > .swiper-wrapper > .swiper-slide:nth-of-type(2) > .slideWrapper > .contentWrapper > .swiperContent > h4, section.swiprContainer .swiper > .swiper-wrapper > .swiper-slide:nth-of-type(2) > .slideWrapper > .contentWrapper > .swiperContent h3 {
+          color: var(--tWhite); }
 
 section.menuTabsContainer {
   display: flex;
@@ -844,8 +845,7 @@ section.menuTabsContainer {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  position: relative;
-  top: 80px;
+  margin-top: 80px;
   background-color: var(--bFa);
   border-bottom: 4px solid whitesmoke; }
   section.menuTabsContainer > div.tabsContainer {
@@ -878,3 +878,152 @@ section.menuTabsContainer {
         color: var(--t5); }
         section.menuTabsContainer > div.tabsContainer > div.tab > a:hover > span > svg {
           fill: var(--t5); }
+
+header {
+  overflow: hidden; }
+
+section.supportBtn {
+  display: flex;
+  width: auto;
+  position: fixed;
+  right: 45px;
+  bottom: 10px;
+  z-index: 999999;
+  background-color: #007681;
+  border-radius: 999px;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 7.5px;
+  transition: 300ms; }
+  section.supportBtn:hover {
+    padding: 7.5px 7.5px 7.5px 20px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+    transition: border unset; }
+    section.supportBtn:hover > p {
+      transition: 300ms;
+      display: block;
+      opacity: 1; }
+  section.supportBtn > p {
+    display: none;
+    color: var(--tWhite);
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+    margin-right: 20px; }
+  section.supportBtn > span {
+    display: block;
+    width: 30px;
+    height: 30px; }
+    section.supportBtn > span > svg {
+      fill: var(--tWhite); }
+  section.supportBtn > div.supportPage {
+    width: 320px;
+    height: 460px;
+    position: absolute;
+    right: 0;
+    bottom: -470px;
+    border: 1px solid #cccccc;
+    background-color: var(--tWhite);
+    transition: 300ms; }
+    section.supportBtn > div.supportPage > .supportContainer {
+      width: 100%;
+      height: 100%; }
+      section.supportBtn > div.supportPage > .supportContainer > div.head {
+        width: 100%;
+        height: 44px;
+        padding: 5px;
+        position: relative;
+        border-bottom: 1px solid #cccccc; }
+        section.supportBtn > div.supportPage > .supportContainer > div.head > h2 {
+          text-align: center;
+          font-size: 14px;
+          font-weight: 700;
+          color: var(--tDark);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+        section.supportBtn > div.supportPage > .supportContainer > div.head > div.frame {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%);
+          column-gap: 10px; }
+          section.supportBtn > div.supportPage > .supportContainer > div.head > div.frame > button {
+            all: unset; }
+            section.supportBtn > div.supportPage > .supportContainer > div.head > div.frame > button > span {
+              font-size: 14px;
+              font-weight: 700; }
+      section.supportBtn > div.supportPage > .supportContainer > form {
+        display: flex;
+        width: 100%;
+        padding: 24px;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center; }
+        section.supportBtn > div.supportPage > .supportContainer > form > div.row {
+          width: 100%;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: start;
+          align-items: center;
+          column-gap: 8px; }
+          section.supportBtn > div.supportPage > .supportContainer > form > div.row > label {
+            display: block;
+            width: 58.2px;
+            height: 40px;
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: capitalize;
+            line-height: 40px;
+            color: var(--tDark); }
+          section.supportBtn > div.supportPage > .supportContainer > form > div.row > input {
+            display: block;
+            width: calc(100% - 58.2px - 8px);
+            height: 32px;
+            padding: 4px 12px;
+            background-color: var(--bFd);
+            border: 1px solid var(--tSuccessGreen);
+            border-radius: 2px; }
+            section.supportBtn > div.supportPage > .supportContainer > form > div.row > input::placeholder {
+              font-size: 10.5px;
+              font-weight: 400;
+              color: var(--t9); }
+            section.supportBtn > div.supportPage > .supportContainer > form > div.row > input::selection {
+              background-color: rgba(128, 128, 128, 0.4); }
+        section.supportBtn > div.supportPage > .supportContainer > form > div.supportBtnContainer {
+          display: flex;
+          width: 100%;
+          height: 45px;
+          margin-top: 16px;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: center;
+          column-gap: 10px; }
+          section.supportBtn > div.supportPage > .supportContainer > form > div.supportBtnContainer > button {
+            all: unset;
+            width: 124.8px;
+            height: 100%;
+            text-align: center;
+            border-radius: 25px;
+            border: 2px solid var(--tSuccessGreen);
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            transition: 300ms; }
+            section.supportBtn > div.supportPage > .supportContainer > form > div.supportBtnContainer > button:first-of-type {
+              background-color: var(--tWhite);
+              color: var(--tSuccessGreen); }
+            section.supportBtn > div.supportPage > .supportContainer > form > div.supportBtnContainer > button:last-of-type {
+              background-color: var(--tSuccessGreen);
+              color: var(--tWhite); }
+            section.supportBtn > div.supportPage > .supportContainer > form > div.supportBtnContainer > button:hover {
+              transform: scale(1.01, 1.01); }
