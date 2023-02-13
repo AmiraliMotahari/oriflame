@@ -11,7 +11,9 @@
     "xxl": "node-sass -w sass/xxl.scss -o css/xxl; -r",
     "xxlMinify": "node-sass -w sass/xxl.scss -o css/xxl -r --output-style compressed",
     "xl": "node-sass -w sass/xl.scss -o css/xl; -r",
-    "xlMinify": "node-sass -w sass/xl.scss -o css/xl -r --output-style compressed"
+    "xlMinify": "node-sass -w sass/xl.scss -o css/xl -r --output-style compressed",
+    "lg": "node-sass -w sass/lg.scss -o css/lg; -r",
+    "lgMinify": "node-sass -w sass/lg.scss -o css/lg -r --output-style compressed"
   },
   "author": "Amirali Motahari",
   "license": "ISC",

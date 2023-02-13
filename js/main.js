@@ -99,33 +99,39 @@ let shoppingBag = document.querySelector("div.right>div.shoppingButton");
 let shoppingbPage = document.querySelector("div.shoppingBagPage");
 
 function shoppingBagPageActivator(){
-  shoppingBag.addEventListener("mouseenter", function () {
-  document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-light");
-  document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-solid");
-
-  shoppingbPage.classList.add("activator");
-  document.querySelector(
-    "div.shoppingBagPage>div.shoppingContainer"
-  ).style.opacity = "1";
   menuButtonDeactivator();
   ourStoryPageDeactivator();
   joinUsPageDeactivator();
   logInPageDeactivator();
-});
-shoppingBag.addEventListener("click", function () {
-  document.querySelector("div.shoppingBagPage").classList.toggle("activator");
-  menuButtonDeactivator();
-  ourStoryPageDeactivator();
-  joinUsPageDeactivator();
-  logInPageDeactivator();
-});
 }
 function shoppingBagPageDeactivator(){
     document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-solid");
     document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-light");
+    shoppingbPage.classList.remove("activator");
 }
-shoppingBagPageActivator();
-shoppingBag.addEventListener("mouseleave", shoppingBagPageDeactivator);
+function shoppingLogoDeactivator(){
+    document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-solid");
+    document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-light");
+}
+
+shoppingBag.addEventListener("mouseenter", function () {
+  document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-light");
+  document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-solid");
+
+  shoppingbPage.classList.add("activator");
+  setInterval(() => {
+    document.querySelector(
+      "div.shoppingBagPage>div.shoppingContainer"
+    ).style.opacity = "1";
+  }, 100);
+  shoppingBagPageActivator();
+});
+shoppingBag.addEventListener("click", function () {
+    shoppingbPage.classList.toggle("activator");
+    shoppingBagPageActivator();
+  });
+
+shoppingBag.addEventListener("mouseleave", shoppingLogoDeactivator);
 
 
 document
@@ -233,19 +239,48 @@ userPassAuth.addEventListener("input",function(){
 let supBtn = document.querySelector("section.supportBtn");
 let supportPage = document.querySelector("div.supportPage");
 let closeBtn = document.getElementById("supportCloseBtn");
+let minimizeBtn = document.getElementById("supportMinimizeBtn");
 
 function supportPageActivator(){
-  supportPage.style.bottom = "-10px";
+  supportPage.classList.add("test");
 }
 function supportPageDeactivator() {
-  supportPage.style.bottom = "";
+  supportPage.classList.remove("test");
 }
 
-supBtn.addEventListener("click",function(){
-  supportPageActivator();
+supBtn.addEventListener("click",function(e){
+   supportPage.classList.add("test");
 });
 
-closeBtn.addEventListener("click",function(){
+closeBtn.addEventListener("click",function(e){
   supportPageDeactivator();
 });
-console.log(closeBtn);
+supportMinimizeBtn.addEventListener("click", function (e) {
+  supBtn.style.backgroundColor="#333";
+  alert("d")
+});
+
+
+//delivery btn
+document.getElementById("deliveryClose").addEventListener("click",function(){
+  document.querySelector("section.swiprContainer>div.delivery").style.display="none";
+});
+
+//menu tabs
+// let menutabs = document.querySelector("div.menuTabsContainer");
+// let menutabs2 = document.querySelector("section.menuTabsContainer>div.tabsContainer");
+// let menutabs3 = menutabs2.firstChild;
+// let emptyDiv = document.createElement("div");
+// emptyDiv.style.width="88px";
+// emptyDiv.style.height = "44px";
+// emptyDiv.style.backgroundColor = "black";
+
+// menutabs2.insertBefore(emptyDiv, menutabs3);
+
+// // window.document.addEventListener("resize",function(){
+// //   menutabs2.append(emptyDiv);
+// // });
+
+// menutabs.addEventListener("click",function(){
+
+// });

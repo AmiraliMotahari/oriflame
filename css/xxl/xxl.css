@@ -458,288 +458,290 @@ section.mainContainer {
             transform: scale(1.01, 1.01);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: 300ms; }
-  section.mainContainer > div.ourStoryPage {
-    display: none;
-    width: 100vw;
-    height: calc(100vh - 80px);
-    position: absolute;
-    top: 80px;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5); }
-    section.mainContainer > div.ourStoryPage > .ourStoryContainer {
-      width: 100%;
-      height: 333px;
-      background-color: var(--bgWhite);
-      display: block;
-      padding: 0 90px 5px;
-      overflow: auto; }
-      section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper {
-        display: flex;
+    section.mainContainer > nav > div.ourStoryPage {
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5); }
+      section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer {
         width: 100%;
-        height: 100%;
-        flex-flow: row nowrap;
-        column-gap: 5px;
-        justify-items: center;
-        align-items: center; }
-        section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content {
+        height: 333px;
+        background-color: var(--bgWhite);
+        display: block;
+        padding: 0 5px 5px;
+        overflow: auto; }
+        section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper {
+          display: flex;
           width: 100%;
           height: 100%;
-          margin-bottom: 5px; }
-          section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a {
-            width: 100%;
-            height: 100%;
-            display: block;
-            position: relative;
-            text-decoration: none;
-            overflow: hidden; }
-            section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a > img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              position: relative; }
-            section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a::before {
-              content: "";
-              width: 100%;
-              height: 100%;
-              background-color: rgba(0, 0, 0, 0.5);
-              position: absolute;
-              top: 0;
-              left: 0;
-              z-index: 2;
-              opacity: 0;
-              transition: 300ms; }
-            section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a:hover::before {
-              opacity: 1;
-              transition: 300ms; }
-            section.mainContainer > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a > span {
-              position: absolute;
-              display: block;
-              width: 100%;
-              font-size: 40px;
-              font-weight: 700;
-              text-transform: capitalize;
-              text-align: center;
-              top: 50%;
-              transform: translateY(-50%);
-              color: var(--tWhite);
-              z-index: 2; }
-  section.mainContainer > div.joinUsPage {
-    display: none;
-    width: 100vw;
-    height: calc(100vh - 80px);
-    position: absolute;
-    top: 80px;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5); }
-    section.mainContainer > div.joinUsPage > div.joinUsContainer {
-      width: 100%;
-      height: 376px;
-      background-color: var(--bgWhite);
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      align-items: start;
-      padding: 0 40px;
-      overflow: hidden; }
-      section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top {
-        width: 100%;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
-        align-items: center;
-        column-gap: 5px; }
-        section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content {
-          width: 680px; }
-          section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content > a {
-            display: block;
-            width: 100%;
-            position: relative;
-            text-decoration: none; }
-            section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content > a > img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              position: relative; }
-            section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content > a::before {
-              content: "";
-              width: 100%;
-              height: 99%;
-              background-color: rgba(0, 0, 0, 0.5);
-              position: absolute;
-              top: 0;
-              left: 0;
-              z-index: 2;
-              opacity: 0;
-              transition: 300ms; }
-            section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content > a:hover::before {
-              opacity: 1;
-              transition: 300ms; }
-            section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content > a:hover > span {
-              background-color: #CDA89C;
-              transition: 300ms;
-              border: 2px solid #CDA89C; }
-            section.mainContainer > div.joinUsPage > div.joinUsContainer > div.top > .content > a > span {
-              position: absolute;
-              display: block;
-              font-size: 20px;
-              font-weight: 700;
-              text-transform: capitalize;
-              text-align: center;
-              top: 60%;
-              left: 50%;
-              transform: translate(-50%, 0);
-              color: var(--tWhite);
-              z-index: 2;
-              border: 2px solid var(--tWhite);
-              border-radius: 25px;
-              padding: 10px 30px;
-              transition: 300ms; }
-      section.mainContainer > div.joinUsPage > div.joinUsContainer > a {
-        text-decoration: none;
-        font-size: 15px;
-        font-family: 400;
-        color: var(--tDark);
-        text-decoration-line: underline;
-        transition: 300ms;
-        margin: 10px 0; }
-        section.mainContainer > div.joinUsPage > div.joinUsContainer > a:hover {
-          color: var(--t9);
-          transition: 300ms; }
-  section.mainContainer > div.logInPage {
-    display: none;
-    width: 100vw;
-    height: calc(100vh - 80px);
-    position: absolute;
-    top: 80px;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5); }
-    section.mainContainer > div.logInPage > div.logInContainer {
-      width: 280px;
-      height: 100%;
-      background-color: var(--tWhite);
-      overflow: auto; }
-      section.mainContainer > div.logInPage > div.logInContainer > div.wrapper {
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        align-items: center;
-        row-gap: 10px; }
-        section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > h2 {
-          color: var(--tDark);
-          font-size: 20px;
-          font-weight: 700;
-          text-align: center;
-          margin-bottom: 10px;
-          padding: 15px 20px; }
-        section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form {
-          display: flex;
-          width: 100%;
-          display: flex;
-          flex-flow: column wrap;
-          justify-content: start;
-          align-items: start;
-          padding: 0 20px; }
-          section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form > label {
-            color: var(--tDark);
-            font-size: 10px;
-            font-weight: 400;
-            text-align: left;
-            margin-bottom: 10px; }
-          section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form > #userEmail, section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form #userPass {
-            all: unset;
-            width: 100%;
-            border: unset;
-            border-bottom: 1px solid var(--t9);
-            margin-bottom: 10px;
-            padding: 4px 0 5px; }
-            section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form > #userEmail:hover, section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form #userPass:hover {
-              border-bottom: 1px solid var(--tDark); }
-          section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form > #submitLogInButton {
-            all: unset;
-            width: 100%;
-            height: 40px;
-            background-color: var(--tSuccessGreen);
-            color: var(--tWhite);
-            font-size: 14px;
-            font-weight: 700;
-            text-align: center;
-            border-radius: 25px;
-            margin-top: 5px;
-            transition: 300ms; }
-            section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > form > #submitLogInButton:hover {
-              background-color: #489671;
-              transition: 300ms; }
-        section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.forget {
-          text-align: center;
-          margin: 10px 20px; }
-          section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.forget > a {
-            text-decoration: none;
-            color: var(--tDark);
-            font-size: 12px;
-            font-weight: 700;
-            text-align: center;
-            text-decoration-line: underline;
-            text-transform: capitalize; }
-        section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton {
-          height: 40px;
-          text-align: center;
-          border-radius: 25px;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-          margin: 0 20px; }
-          section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton > a {
-            display: flex;
-            width: 100%;
-            flex-flow: row nowrap;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            color: var(--tDark);
-            font-size: 12px;
-            font-weight: 700;
-            text-align: left;
-            text-align: center;
-            line-height: 40px; }
-            section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton > a > span:first-of-type {
-              font-size: 32px;
-              color: #3579ea;
-              margin-left: 8px; }
-            section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton > a > span:last-of-type {
-              margin: 0 32px; }
-        section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.register {
-          width: 100%;
-          display: flex;
-          flex-flow: column;
+          flex-flow: row nowrap;
+          column-gap: 5px;
+          justify-items: center;
           justify-content: center;
           align-items: center; }
-          section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.register > h2 {
-            margin: 20px;
-            color: var(--t5);
+          section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 5px;
+            flex-basis: 452px; }
+            section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a {
+              width: 100%;
+              height: 100%;
+              display: block;
+              position: relative;
+              text-decoration: none;
+              overflow: hidden; }
+              section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a > img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                position: relative; }
+              section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                opacity: 0;
+                transition: 300ms; }
+              section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a:hover::before {
+                opacity: 1;
+                transition: 300ms; }
+              section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper > .content > a > span {
+                position: absolute;
+                display: block;
+                width: 100%;
+                font-size: 40px;
+                font-weight: 700;
+                text-transform: capitalize;
+                text-align: center;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--tWhite);
+                z-index: 2; }
+    section.mainContainer > nav > div.joinUsPage {
+      display: none;
+      width: 100vw;
+      height: calc(100vh - 80px);
+      position: absolute;
+      top: 80px;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5); }
+      section.mainContainer > nav > div.joinUsPage > div.joinUsContainer {
+        width: 100%;
+        background-color: var(--bgWhite);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: start;
+        padding: 0 5px;
+        overflow: hidden; }
+        section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top {
+          width: 100%;
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: center;
+          align-items: start;
+          column-gap: 5px; }
+          section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content {
+            width: 680px;
+            flex-basis: 680px; }
+            section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content > a {
+              display: block;
+              width: 100%;
+              position: relative;
+              text-decoration: none; }
+              section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content > a > img {
+                width: 100%;
+                height: 325px;
+                object-fit: contain;
+                position: relative; }
+              section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content > a::before {
+                content: "";
+                width: 100%;
+                height: 99%;
+                background-color: rgba(0, 0, 0, 0.5);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                opacity: 0;
+                transition: 300ms; }
+              section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content > a:hover::before {
+                opacity: 1;
+                transition: 300ms; }
+              section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content > a:hover > span {
+                background-color: #CDA89C;
+                transition: 300ms;
+                border: 2px solid #CDA89C; }
+              section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content > a > span {
+                position: absolute;
+                display: block;
+                font-size: 20px;
+                font-weight: 700;
+                text-transform: capitalize;
+                text-align: center;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                color: var(--tWhite);
+                z-index: 2;
+                border: 2px solid var(--tWhite);
+                border-radius: 25px;
+                padding: 10px 30px;
+                transition: 300ms; }
+        section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > a {
+          text-decoration: none;
+          font-size: 15px;
+          font-family: 400;
+          color: var(--tDark);
+          text-decoration-line: underline;
+          transition: 300ms;
+          margin: 10px 0; }
+          section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > a:hover {
+            color: var(--t9);
+            transition: 300ms; }
+    section.mainContainer > nav > div.logInPage {
+      display: none;
+      width: 100vw;
+      height: calc(100vh - 80px);
+      position: absolute;
+      top: 80px;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5); }
+      section.mainContainer > nav > div.logInPage > div.logInContainer {
+        width: 280px;
+        height: 100%;
+        background-color: var(--tWhite);
+        overflow: auto; }
+        section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper {
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: center;
+          align-items: center;
+          row-gap: 10px; }
+          section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > h2 {
+            color: var(--tDark);
             font-size: 20px;
             font-weight: 700;
-            text-align: center; }
-          section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.register > a {
-            display: block;
-            width: 100%;
-            height: 44px;
-            padding: 10px;
-            text-decoration: none;
-            color: var(--t5);
-            font-size: 14px;
-            font-weight: 700;
             text-align: center;
-            background-color: #f5f5f5;
-            margin-bottom: 5px;
-            line-height: 24px; }
-            section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.register > a:hover {
-              background-color: #0000000D; }
-            section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.register > a:last-of-type {
-              background-color: unset;
-              font-size: 12px;
+            margin-bottom: 10px;
+            padding: 15px 20px; }
+          section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form {
+            display: flex;
+            width: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: start;
+            align-items: start;
+            padding: 0 20px; }
+            section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form > label {
+              color: var(--tDark);
+              font-size: 10px;
               font-weight: 400;
-              text-transform: capitalize;
-              text-decoration: underline; }
-              section.mainContainer > div.logInPage > div.logInContainer > div.wrapper > div.register > a:last-of-type:hover {
-                color: var(--t6); }
+              text-align: left;
+              margin-bottom: 10px; }
+            section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form > #userEmail, section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form #userPass {
+              all: unset;
+              width: 100%;
+              border: unset;
+              border-bottom: 1px solid var(--t9);
+              margin-bottom: 10px;
+              padding: 4px 0 5px; }
+              section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form > #userEmail:hover, section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form #userPass:hover {
+                border-bottom: 1px solid var(--tDark); }
+            section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form > #submitLogInButton {
+              all: unset;
+              width: 100%;
+              height: 40px;
+              background-color: var(--tSuccessGreen);
+              color: var(--tWhite);
+              font-size: 14px;
+              font-weight: 700;
+              text-align: center;
+              border-radius: 25px;
+              margin-top: 5px;
+              transition: 300ms; }
+              section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form > #submitLogInButton:hover {
+                background-color: #489671;
+                transition: 300ms; }
+          section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.forget {
+            text-align: center;
+            margin: 10px 20px; }
+            section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.forget > a {
+              text-decoration: none;
+              color: var(--tDark);
+              font-size: 12px;
+              font-weight: 700;
+              text-align: center;
+              text-decoration-line: underline;
+              text-transform: capitalize; }
+          section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton {
+            height: 40px;
+            text-align: center;
+            border-radius: 25px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            margin: 0 20px; }
+            section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton > a {
+              display: flex;
+              width: 100%;
+              flex-flow: row nowrap;
+              justify-content: center;
+              align-items: center;
+              text-decoration: none;
+              color: var(--tDark);
+              font-size: 12px;
+              font-weight: 700;
+              text-align: left;
+              text-align: center;
+              line-height: 40px; }
+              section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton > a > span:first-of-type {
+                font-size: 32px;
+                color: #3579ea;
+                margin-left: 8px; }
+              section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton > a > span:last-of-type {
+                margin: 0 32px; }
+          section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.register {
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center; }
+            section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.register > h2 {
+              margin: 20px;
+              color: var(--t5);
+              font-size: 20px;
+              font-weight: 700;
+              text-align: center; }
+            section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.register > a {
+              display: block;
+              width: 100%;
+              height: 44px;
+              padding: 10px;
+              text-decoration: none;
+              color: var(--t5);
+              font-size: 14px;
+              font-weight: 700;
+              text-align: center;
+              background-color: #f5f5f5;
+              margin-bottom: 5px;
+              line-height: 24px; }
+              section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.register > a:hover {
+                background-color: #0000000D; }
+              section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.register > a:last-of-type {
+                background-color: unset;
+                font-size: 12px;
+                font-weight: 400;
+                text-transform: capitalize;
+                text-decoration: underline; }
+                section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.register > a:last-of-type:hover {
+                  color: var(--t6); }
 
 .activator {
   display: block !important; }
@@ -752,6 +754,30 @@ section.swiprContainer {
   height: 500px;
   position: relative;
   top: 80px; }
+  section.swiprContainer > .delivery {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 118, 129, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999998; }
+    section.swiprContainer > .delivery > h2 {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--tWhite);
+      text-align: center;
+      line-height: 50px;
+      text-transform: capitalize; }
+    section.swiprContainer > .delivery > button {
+      all: unset;
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%); }
+      section.swiprContainer > .delivery > button > span {
+        font-size: 28px;
+        color: var(--tWhite); }
   section.swiprContainer .swiper {
     width: 100%;
     height: 100%; }
@@ -888,7 +914,7 @@ section.supportBtn {
   position: fixed;
   right: 45px;
   bottom: 10px;
-  z-index: 999999;
+  z-index: 999998;
   background-color: #007681;
   border-radius: 999px;
   flex-flow: row nowrap;
@@ -925,7 +951,7 @@ section.supportBtn {
     height: 460px;
     position: absolute;
     right: 0;
-    bottom: -470px;
+    bottom: -500px;
     border: 1px solid #cccccc;
     background-color: var(--tWhite);
     transition: 300ms; }
@@ -1027,3 +1053,6 @@ section.supportBtn {
               color: var(--tWhite); }
             section.supportBtn > div.supportPage > .supportContainer > form > div.supportBtnContainer > button:hover {
               transform: scale(1.01, 1.01); }
+
+.test {
+  bottom: -10px !important; }

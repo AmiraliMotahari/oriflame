@@ -142,7 +142,7 @@ section.mainContainer {
     section.mainContainer > nav > div.menuPage {
       display: none;
       width: 100vw;
-      height: calc(100vh - 80px);
+      height: 100vh;
       position: absolute;
       top: 80px;
       left: 0;
@@ -283,7 +283,7 @@ section.mainContainer {
             border-left: 2px solid rgba(0, 0, 0, 0.05); }
             section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper {
               display: grid;
-              grid-template-columns: repeat(5, 1fr);
+              grid-template-columns: repeat(4, 1fr);
               padding: 20px 20px 20px 45px;
               transition: 500ms; }
               section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > h2 {
@@ -402,7 +402,7 @@ section.mainContainer {
     section.mainContainer > nav > div.shoppingBagPage {
       display: none;
       width: 100%;
-      height: calc(100vh - 80px);
+      height: 100vh;
       background-color: rgba(0, 0, 0, 0.5);
       position: absolute;
       top: 80px;
@@ -462,7 +462,7 @@ section.mainContainer {
     section.mainContainer > nav > div.ourStoryPage {
       display: none;
       width: 100vw;
-      height: calc(100vh - 80px);
+      height: 100vh;
       position: absolute;
       top: 80px;
       left: 0;
@@ -472,7 +472,7 @@ section.mainContainer {
         height: 333px;
         background-color: var(--bgWhite);
         display: block;
-        padding: 0 5px 5px;
+        padding: 0 calc(100% / calc(1536 / 3)) 5px;
         overflow: auto; }
         section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper {
           display: flex;
@@ -528,7 +528,7 @@ section.mainContainer {
     section.mainContainer > nav > div.joinUsPage {
       display: none;
       width: 100vw;
-      height: calc(100vh - 80px);
+      height: 100vh;
       position: absolute;
       top: 80px;
       left: 0;
@@ -550,7 +550,7 @@ section.mainContainer {
           align-items: start;
           column-gap: 5px; }
           section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content {
-            width: 100%;
+            width: 680px;
             flex-basis: 680px; }
             section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content > a {
               display: block;
@@ -610,7 +610,7 @@ section.mainContainer {
     section.mainContainer > nav > div.logInPage {
       display: none;
       width: 100vw;
-      height: calc(100vh - 80px);
+      height: 100vh;
       position: absolute;
       top: 80px;
       left: 0;
