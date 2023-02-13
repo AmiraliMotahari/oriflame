@@ -4,12 +4,11 @@ section.mainContainer {
   section.mainContainer > nav {
     display: grid;
     width: 100%;
-    height: 80px;
+    height: 56px;
     justify-content: center;
     align-items: center;
     grid-template-columns: 3fr 1fr 3fr;
-    padding-right: 4.88281%;
-    padding-left: 3.90625%;
+    padding: 0 15px;
     position: fixed;
     z-index: 999999;
     background-color: var(--bgWhite);
@@ -20,7 +19,7 @@ section.mainContainer {
       flex-flow: row wrap;
       justify-content: left;
       align-items: center;
-      column-gap: 40px; }
+      column-gap: 30px; }
       section.mainContainer > nav > div.left > div.menu {
         width: 25px;
         height: 30px; }
@@ -48,6 +47,7 @@ section.mainContainer {
             transform: scale(1, 1.5);
             transition: 300ms; }
       section.mainContainer > nav > div.left > div.logIn {
+        display: none;
         width: 28px;
         height: 28px;
         text-align: center;
@@ -62,6 +62,7 @@ section.mainContainer {
             line-height: 28px;
             color: var(--tOriGreen); }
       section.mainContainer > nav > div.left > div.ourStory {
+        display: none;
         cursor: pointer; }
         section.mainContainer > nav > div.left > div.ourStory > button {
           all: unset;
@@ -73,6 +74,7 @@ section.mainContainer {
           section.mainContainer > nav > div.left > div.ourStory > button:hover {
             color: var(--tOriGreen); }
       section.mainContainer > nav > div.left > div.joinUs {
+        display: none;
         cursor: pointer; }
         section.mainContainer > nav > div.left > div.joinUs > button {
           all: unset;
@@ -84,7 +86,19 @@ section.mainContainer {
           section.mainContainer > nav > div.left > div.joinUs > button:hover {
             color: var(--tOriGreen); }
       section.mainContainer > nav > div.left > div.searchIconRight {
-        display: none; }
+        width: 28px;
+        height: 28px;
+        text-align: center;
+        cursor: pointer; }
+        section.mainContainer > nav > div.left > div.searchIconRight > button {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          all: unset; }
+          section.mainContainer > nav > div.left > div.searchIconRight > button > span {
+            font-size: 20px;
+            line-height: 28px;
+            color: var(--t5); }
     section.mainContainer > nav > div.mid {
       width: 100%;
       height: 100%; }
@@ -117,36 +131,36 @@ section.mainContainer {
           text-decoration: none;
           text-align: center;
           color: var(--tOriGreen); }
-      section.mainContainer > nav > div.right > .searchBox {
-        display: flex;
+      section.mainContainer > nav > div.right > div.searchBox {
+        display: none;
         column-gap: 5px;
         padding: 5px 10px 5px 15px;
         justify-content: center;
         align-items: center;
         background-color: var(--bf5f5f5);
         border-radius: 20px; }
-        section.mainContainer > nav > div.right > .searchBox > label[for=search] {
+        section.mainContainer > nav > div.right > div.searchBox > label[for=search] {
           color: var(--tOriGreen);
           font-size: 20px; }
-        section.mainContainer > nav > div.right > .searchBox > input[id=search] {
+        section.mainContainer > nav > div.right > div.searchBox > input[id=search] {
           all: unset;
           color: var(--tDark);
           font-size: 12px;
           padding-left: 5px; }
-          section.mainContainer > nav > div.right > .searchBox > input[id=search]::placeholder {
+          section.mainContainer > nav > div.right > div.searchBox > input[id=search]::placeholder {
             color: var(--tDark);
             font-size: 12px;
             font-weight: lighter; }
-        section.mainContainer > nav > div.right > .searchBox > span {
+        section.mainContainer > nav > div.right > div.searchBox > span {
           color: var(--tOriGreen);
           font-size: 20px;
           visibility: hidden; }
     section.mainContainer > nav > div.menuPage {
       display: none;
       width: 100vw;
-      height: calc(100vh - 80px);
+      height: 100vh;
       position: absolute;
-      top: 80px;
+      top: 56px;
       left: 0;
       background-color: rgba(0, 0, 0, 0.5);
       overflow: auto; }
@@ -285,7 +299,7 @@ section.mainContainer {
             border-left: 2px solid rgba(0, 0, 0, 0.05); }
             section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper {
               display: grid;
-              grid-template-columns: repeat(5, 1fr);
+              grid-template-columns: repeat(4, 1fr);
               padding: 20px 20px 20px 45px;
               transition: 500ms; }
               section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > h2 {
@@ -404,15 +418,15 @@ section.mainContainer {
     section.mainContainer > nav > div.shoppingBagPage {
       display: none;
       width: 100%;
-      height: calc(100vh - 80px);
+      height: 100vh;
       background-color: rgba(0, 0, 0, 0.5);
       position: absolute;
-      top: 80px;
+      top: 56px;
       left: 0;
       transition: 300ms; }
       section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer {
         width: 400px;
-        height: 100%;
+        height: calc(100% - 56px);
         background-color: var(--bgWhite);
         margin-left: auto;
         position: relative;
@@ -464,7 +478,7 @@ section.mainContainer {
     section.mainContainer > nav > div.ourStoryPage {
       display: none;
       width: 100vw;
-      height: calc(100vh - 80px);
+      height: 100vh;
       position: absolute;
       top: 80px;
       left: 0;
@@ -474,7 +488,7 @@ section.mainContainer {
         height: 333px;
         background-color: var(--bgWhite);
         display: block;
-        padding: 0 5px 5px;
+        padding: 0 calc(100% / calc(1536 / 3)) 5px;
         overflow: auto; }
         section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer > .ourStoryWrapper {
           display: flex;
@@ -530,7 +544,7 @@ section.mainContainer {
     section.mainContainer > nav > div.joinUsPage {
       display: none;
       width: 100vw;
-      height: calc(100vh - 80px);
+      height: 100vh;
       position: absolute;
       top: 80px;
       left: 0;
@@ -552,7 +566,7 @@ section.mainContainer {
           align-items: start;
           column-gap: 5px; }
           section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content {
-            width: 100%;
+            width: 680px;
             flex-basis: 680px; }
             section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content > a {
               display: block;
@@ -612,7 +626,7 @@ section.mainContainer {
     section.mainContainer > nav > div.logInPage {
       display: none;
       width: 100vw;
-      height: calc(100vh - 80px);
+      height: 100vh;
       position: absolute;
       top: 80px;
       left: 0;
@@ -744,8 +758,45 @@ section.mainContainer {
                 text-decoration: underline; }
                 section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.register > a:last-of-type:hover {
                   color: var(--t6); }
-    section.mainContainer > nav > div.searchBoxRightWrapper {
-      display: none; }
+    section.mainContainer > nav > .searchBoxRightWrapper {
+      display: none;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 56px;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.5); }
+      section.mainContainer > nav > .searchBoxRightWrapper > .searchBoxRightBack {
+        width: 100%;
+        height: 68px;
+        padding: 15px;
+        background-color: var(--bgWhite); }
+        section.mainContainer > nav > .searchBoxRightWrapper > .searchBoxRightBack > div.searchBoxRight {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          column-gap: 5px;
+          padding: 0 15px;
+          justify-content: space-between;
+          align-items: center;
+          background-color: var(--bf5f5f5);
+          border-radius: 25px; }
+          section.mainContainer > nav > .searchBoxRightWrapper > .searchBoxRightBack > div.searchBoxRight > label[for=search] {
+            color: var(--tOriGreen);
+            font-size: 16px; }
+          section.mainContainer > nav > .searchBoxRightWrapper > .searchBoxRightBack > div.searchBoxRight > input[id=search] {
+            all: unset;
+            width: 100%;
+            color: var(--tDark);
+            font-size: 12px;
+            padding-left: 5px; }
+            section.mainContainer > nav > .searchBoxRightWrapper > .searchBoxRightBack > div.searchBoxRight > input[id=search]::placeholder {
+              color: var(--tDark);
+              font-size: 12px;
+              font-weight: lighter; }
+          section.mainContainer > nav > .searchBoxRightWrapper > .searchBoxRightBack > div.searchBoxRight > span {
+            color: var(--tOriGreen);
+            font-size: 16px; }
 
 .activator {
   display: block !important; }
@@ -757,8 +808,9 @@ section.swiprContainer {
   width: 100%;
   height: 500px;
   position: relative;
-  top: 80px; }
+  top: 56px; }
   section.swiprContainer > .delivery {
+    display: none;
     width: 100%;
     height: 50px;
     background-color: rgba(0, 118, 129, 0.8);
@@ -821,7 +873,7 @@ section.swiprContainer {
               flex-flow: column;
               justify-content: center;
               align-items: end;
-              padding: 0 calc(100% / calc(1536/180)); }
+              padding: 0 calc(100% / calc(992/45)); }
               section.swiprContainer .swiper > .swiper-wrapper > .swiper-slide > div.slideWrapper > div.contentWrapper > .swiperContent > h4 {
                 width: 450px;
                 font-size: 14px;
@@ -875,7 +927,7 @@ section.menuTabsContainer {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 56px;
   background-color: var(--bFa);
   border-bottom: 4px solid whitesmoke; }
   section.menuTabsContainer > div.tabsContainer {
