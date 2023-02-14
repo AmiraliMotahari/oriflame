@@ -223,7 +223,7 @@ section.mainContainer {
             padding-left: 30px;
             color: var(--tDark);
             position: relative; }
-          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(14) > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(13) > a:hover {
+          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(14) > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(15) > a:hover {
             background-color: unset;
             color: var(--tOriGreen); }
           section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(5) > a::before {
@@ -474,9 +474,9 @@ section.mainContainer {
                     section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > .innerGroup > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > .innerGroup > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > .innerGroup > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > .innerGroup > a:hover {
                       color: var(--tOriGreen);
                       font-weight: 700; }
-          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:first-of-type > div.page {
+          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page {
             display: block; }
-          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox {
+          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > div.containerBox {
             display: flex;
             margin: 0 auto;
             width: 310px;
@@ -484,7 +484,7 @@ section.mainContainer {
             flex-flow: column wrap;
             padding: 20px 0;
             row-gap: 10px; }
-            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox > a {
+            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > div.containerBox > a {
               text-decoration: none;
               text-align: center;
               text-transform: capitalize;
@@ -493,11 +493,11 @@ section.mainContainer {
               color: var(--tDark);
               position: relative;
               overflow: hidden; }
-              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox > a > img {
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > div.containerBox > a > img {
                 width: 100%;
                 object-fit: cover;
                 border-radius: 10px; }
-              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox > a > div.coverBack {
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > div.containerBox > a > div.coverBack {
                 width: 100%;
                 height: 99.2%;
                 background-color: rgba(0, 0, 0, 0.5);
@@ -507,47 +507,41 @@ section.mainContainer {
                 border-radius: 10px;
                 display: none;
                 transition: 300ms; }
-              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox > a:hover {
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > div.containerBox > a:hover {
                 color: var(--t9); }
-                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox > a:hover > div.coverBack {
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > div.containerBox > a:hover > div.coverBack {
                   display: block;
                   transition: 300ms; }
-              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox > a:last-of-type {
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > div.containerBox > a:last-of-type {
                 display: block;
                 width: 70px;
                 margin: 0 auto;
                 text-transform: uppercase;
                 border-bottom: 2px solid var(--tDark); }
-                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox > a:last-of-type:hover {
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > div.containerBox > a:last-of-type:hover {
                   color: var(--tDark); }
-            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(2) > div.page > div.containerBox > p {
+            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > div.containerBox > p {
               text-align: center;
               text-transform: capitalize;
               font-size: 14px;
               font-weight: 400;
               color: var(--t6); }
-          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > a {
+          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(4) > div.page > a {
             display: block;
-            width: calc(100% / 4.75);
+            width: 100%;
             text-decoration: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); }
-            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > a > img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover; }
-            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page > a > span {
-              display: block;
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              color: var(--tWhite);
+            margin: 20px 0; }
+            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(4) > div.page > a > img {
+              display: none; }
+            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(4) > div.page > a > span {
+              margin-left: 50px;
+              color: var(--tDark);
               text-align: center;
               text-transform: capitalize;
-              font-size: 30px;
+              font-size: 14px;
+              font-weight: 400; }
+            section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(4) > div.page > a:hover > span {
+              color: var(--tOriGreen);
               font-weight: 700; }
     section.mainContainer > nav > div.shoppingBagPage {
       display: none;
