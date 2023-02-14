@@ -1,6 +1,27 @@
-//menu button
+//get window size 
+let windowSize = window.innerWidth;
 let flag = 0;
 let menuButton = document.querySelector("div.menuButton");
+let miniMenuButton = document.querySelector("div.menuProductsButton");
+let shoppingBag = document.querySelector("div.right>div.shoppingButton");
+let shoppingbPage = document.querySelector("div.shoppingBagPage");
+let activator = document.querySelectorAll("div.menuContainer>div.content");
+let innerGroupPage = document.querySelectorAll("div.clumnOne>div.group");
+let target = document.querySelector("div.menuContainer>div.content>div.page");
+let ourStoryButton = document.getElementById("ourStory");
+let ourStoryPage = document.querySelector("div.ourStoryPage");
+let joinUsButton = document.getElementById("joinUs");
+let joinUsPage = document.querySelector("div.joinUsPage");
+let supBtn = document.querySelector("section.supportBtn");
+let supportPage = document.querySelector("div.supportPage");
+let closeBtn = document.getElementById("supportCloseBtn");
+let minimizeBtn = document.getElementById("supportMinimizeBtn");
+let logInButton = document.getElementById("logIn");
+let logInPage = document.querySelector("div.logInPage");
+let userEmailAuth = document.getElementById("userEmail");
+let userPassAuth = document.getElementById("userPass");
+let searchIconRight = document.getElementById("searchIconRight");
+let searchBoxRightWrapper = document.querySelector("div.searchBoxRightWrapper");
 
 function menuButtonActivator() {
   document.getElementById("midLine").style.left = "100%";
@@ -14,7 +35,7 @@ function menuButtonActivator() {
   document.getElementById("botLine").style.top = "50%";
   document.getElementById("botLine").style.translate = "0,-50%";
 
-  document.querySelector("div.menuPage").style.display = "block";
+  document.querySelector("div.menuPage").classList.add("activator");
 
   // elOne.style.background= "#e5e5e526";
   // elOne.addEventListener("mouseleave", function () {
@@ -40,18 +61,113 @@ function menuButtonDeactivator() {
 
   flag = 0;
 }
+function shoppingBagPageActivator() {
+  menuButtonDeactivator();
+  ourStoryPageDeactivator();
+  joinUsPageDeactivator();
+  logInPageDeactivator();
+  miniSearchPageDeactivator();
+}
+function shoppingBagPageDeactivator() {
+  document
+    .querySelector("div.right>div.shoppingButton>a>span")
+    .classList.remove("fa-solid");
+  document
+    .querySelector("div.right>div.shoppingButton>a>span")
+    .classList.add("fa-light");
+  shoppingbPage.classList.remove("activator");
+}
+function shoppingLogoDeactivator() {
+  document
+    .querySelector("div.right>div.shoppingButton>a>span")
+    .classList.remove("fa-solid");
+  document
+    .querySelector("div.right>div.shoppingButton>a>span")
+    .classList.add("fa-light");
+}
+function deactivator() {
+  activator.forEach((elem) => {
+    elem.childNodes[3].classList.remove("activator");
+  });
+}
+function deactivator2(elemMain) {
+  activator.forEach((elem) => {
+    if (elem !== elemMain) {
+      elem.childNodes[3].classList.remove("activator");
+    }
+  });
+}
+function supportPageActivator() {
+  supportPage.classList.add("test");
+}
+function supportPageDeactivator() {
+  supportPage.classList.remove("test");
+}
+function ourStoryPageActivator() {
+  ourStoryPage.classList.add("activator");
+}
+function ourStoryPageDeactivator() {
+  ourStoryPage.classList.remove("activator");
+}
+function joinUsPageActivator() {
+  joinUsPage.classList.add("activator");
+}
+function joinUsPageDeactivator() {
+  joinUsPage.classList.remove("activator");
+}
+function logInPageActivator() {
+  logInPage.classList.add("activator");
+}
+function logInPageDeactivator() {
+  logInPage.classList.remove("activator");
+}
+function miniSearchPageDeactivator(){
+  searchBoxRightWrapper.classList.remove("activator");
+}
 
+window.addEventListener("resize",function(e){
+  windowSize = window.innerWidth;
+});
+
+
+
+//menu button
 menuButton.addEventListener("click", function () {
-  if (flag === 0) {
-    menuButtonActivator();
+  if(windowSize > 992){
+    if (flag === 0) {
+      menuButtonActivator();
+      ourStoryPageDeactivator();
+      joinUsPageDeactivator();
+      logInPageDeactivator();
+      shoppingBagPageDeactivator();
+      miniSearchPageDeactivator();
+    } else {
+      menuButtonDeactivator();
+    }
+  }
+  else if (windowSize < 992) {
     ourStoryPageDeactivator();
     joinUsPageDeactivator();
     logInPageDeactivator();
-    shoppingBagPageDeactivator()
-  } else {
-    menuButtonDeactivator();
+    shoppingBagPageDeactivator();
+    miniSearchPageDeactivator();
+    document.querySelector("div.menuPage").style.display = "block";
   }
 });
+
+//mini manu page
+miniMenuButton.addEventListener("click",function(){
+  document.querySelector("div.menuPage").style.display = "";
+});
+if(windowSize <= 992){
+  innerGroupPage.forEach((elem) => {
+    elem.addEventListener("click", function () {
+      //deactivator2(elem);
+      //elem.childNodes[4].classList.toggle("flexActivator");
+      console.log(elem.childNodes[3]);
+    });
+  });
+}
 
 //log in button
 document
@@ -93,27 +209,17 @@ document.addEventListener("click", function (e) {
     document.querySelector("div.searchBox").style.boxShadow = "";
   }
 });
-
-//shopping bag
-let shoppingBag = document.querySelector("div.right>div.shoppingButton");
-let shoppingbPage = document.querySelector("div.shoppingBagPage");
-
-function shoppingBagPageActivator(){
+//mini search button
+searchIconRight.addEventListener("click", function () {
+  searchBoxRightWrapper.classList.toggle("activator");
   menuButtonDeactivator();
   ourStoryPageDeactivator();
   joinUsPageDeactivator();
   logInPageDeactivator();
-}
-function shoppingBagPageDeactivator(){
-    document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-solid");
-    document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-light");
-    shoppingbPage.classList.remove("activator");
-}
-function shoppingLogoDeactivator(){
-    document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-solid");
-    document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-light");
-}
+  shoppingBagPageDeactivator();
+});
 
+//shopping bag
 shoppingBag.addEventListener("mouseenter", function () {
   document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-light");
   document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-solid");
@@ -144,80 +250,61 @@ document
 
 
 //menu page
-let activator = document.querySelectorAll("div.menuContainer>div.content");
-let target = document.querySelector("div.menuContainer>div.content>div.page");
-activator.forEach((elem) => {
-  elem.addEventListener("mouseenter", function () {
-    deactivator();
-    elem.childNodes[3].classList.add("activator");
-  });
-});
-function deactivator() {
+if(windowSize > 992){
   activator.forEach((elem) => {
-    elem.childNodes[3].classList.remove("activator");
+    elem.addEventListener("mouseenter", function () {
+      deactivator();
+      elem.childNodes[3].classList.add("activator");
+    });
   });
 }
+else if(windowSize <= 992){
+  activator.forEach((elem) => {
+    elem.addEventListener("click", function () {
+      deactivator2(elem);
+      elem.childNodes[3].classList.toggle("activator");
+    });
+  });
+}
+
+
+
 
 //ourstory page
-let ourStoryButton = document.getElementById("ourStory");
-let ourStoryPage = document.querySelector("div.ourStoryPage");
-
-function ourStoryPageActivator() {
-  ourStoryPage.classList.add("activator");
-}
-function ourStoryPageDeactivator() {
-  ourStoryPage.classList.remove("activator");
-}
-
 ourStoryButton.addEventListener("click", function () {
   ourStoryPage.classList.toggle("activator");
   menuButtonDeactivator();
   joinUsPageDeactivator();
   logInPageDeactivator();
-  shoppingBagPageDeactivator()
+  shoppingBagPageDeactivator();
+  miniSearchPageDeactivator();
 });
 // document.querySelector("div.ourStoryPage>div.ourStoryContainer").addEventListener("mouseleave",function(){
 //     ourStoryPageDeactivator();
 // });
 
 //join us page
-let joinUsButton = document.getElementById("joinUs");
-let joinUsPage = document.querySelector("div.joinUsPage");
-
-function joinUsPageActivator() {
-  joinUsPage.classList.add("activator");
-}
-function joinUsPageDeactivator() {
-  joinUsPage.classList.remove("activator");
-}
-
 joinUsButton.addEventListener("click", function () {
   joinUsPage.classList.toggle("activator");
   menuButtonDeactivator();
   ourStoryPageDeactivator();
   logInPageDeactivator();
-  shoppingBagPageDeactivator()
+  shoppingBagPageDeactivator();
+  miniSearchPageDeactivator();
 });
 
 //login
-let logInButton = document.getElementById("logIn");
-let logInPage = document.querySelector("div.logInPage");
-let userEmailAuth = document.getElementById("userEmail");
-let userPassAuth = document.getElementById("userPass");
 
-function logInPageActivator() {
-  logInPage.classList.add("activator");
-}
-function logInPageDeactivator() {
-  logInPage.classList.remove("activator");
-}
+
+
 
 logInButton.addEventListener("click", function () {
   logInPage.classList.toggle("activator");
   menuButtonDeactivator();
   ourStoryPageDeactivator();
   joinUsPageDeactivator();
-  shoppingBagPageDeactivator()
+  shoppingBagPageDeactivator();
+  miniSearchPageDeactivator();
 });
 
 userEmailAuth.addEventListener("input",function(){
@@ -236,18 +323,6 @@ userPassAuth.addEventListener("input",function(){
 });
 
 //support button 
-let supBtn = document.querySelector("section.supportBtn");
-let supportPage = document.querySelector("div.supportPage");
-let closeBtn = document.getElementById("supportCloseBtn");
-let minimizeBtn = document.getElementById("supportMinimizeBtn");
-
-function supportPageActivator(){
-  supportPage.classList.add("test");
-}
-function supportPageDeactivator() {
-  supportPage.classList.remove("test");
-}
-
 supBtn.addEventListener("click",function(e){
    supportPage.classList.add("test");
 });
