@@ -23,7 +23,6 @@ let userPassAuth = document.getElementById("userPass");
 let searchIconRight = document.getElementById("searchIconRight");
 let searchBoxRightWrapper = document.querySelector("div.searchBoxRightWrapper");
 
-console.log(supBtn);
 window.addEventListener("resize", function (e) {
   windowSize = window.innerWidth;
 });
@@ -99,8 +98,10 @@ function deactivator2(elemMain) {
   activator.forEach((elem) => {
     if (elem !== elemMain) {
       elem.childNodes[3].classList.remove("activator");
+      elem.style.setProperty("--X", "0deg");
     }
   });
+  
 }
 function supportPageActivator() {
   supportPage.classList.add("test");
@@ -156,9 +157,10 @@ menuButton.addEventListener("click", function () {
 
 
     document.querySelector("div.menuPage").classList.add("activator");
-    document.querySelector("div.menuPage>div.menuContainer").style.opacity = "1";
+    document.querySelector("div.menuPage>div.menuContainer").style.left = "0";
   }
 });
+
 
 //mini manu page
 miniMenuButton.addEventListener("click",function(){
@@ -254,7 +256,7 @@ document
   });
 
 
-//menu page
+//menu page --->page
 if(windowSize > 992){
   activator.forEach((elem) => {
     elem.addEventListener("mouseenter", function () {
@@ -268,6 +270,11 @@ else if(windowSize <= 992){
     elem.addEventListener("click", function () {
       deactivator2(elem);
       elem.childNodes[3].classList.toggle("activator");
+      if (elem.childNodes[3].classList.contains("activator")) {
+        elem.style.setProperty("--X", "180deg");
+      } else {
+        elem.style.setProperty("--X", "0deg");
+      }
     });
   });
 }

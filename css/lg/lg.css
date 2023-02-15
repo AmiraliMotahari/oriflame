@@ -429,12 +429,14 @@ section.mainContainer {
       transition: 300ms; }
       section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer {
         width: 400px;
-        height: 100%;
+        height: calc(100% - 80px);
+        min-height: 200px;
         background-color: var(--bgWhite);
         margin-left: auto;
         position: relative;
         opacity: 0;
-        transition: 300ms; }
+        transition: 300ms;
+        overflow: auto; }
         section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer > h2 {
           padding: 20px;
           font-size: 20px;

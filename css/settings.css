@@ -8,8 +8,8 @@
   --bgWhite: white;
   --bgDark: #333;
   --bf5f5f5: #f5f5f5;
-  --bFd: #FDFDFD;
   --bFa: #FAFAFA;
+  --bFd: #FDFDFD;
   --bsid1: rgb(165, 229, 226);
   --bsid2: rgb(219, 152, 182);
   --bsid3: rgb(180, 173, 166);
@@ -38,4 +38,5 @@
   --t80: #808080; }
 
 :root {
-  --s15:15px; }
+  --s15:15px;
+  --X: 0deg; }
