@@ -156,7 +156,8 @@ section.mainContainer {
         flex-flow: row wrap;
         background-color: var(--bgWhite);
         position: relative;
-        padding-top: 10px; }
+        padding-top: 10px;
+        animation: pgaeAnimation 300ms ease-in-out 1ms 1 normal; }
         section.mainContainer > nav > div.menuPage > div.menuContainer > div.smallMenuButtons {
           display: none; }
         section.mainContainer > nav > div.menuPage > div.menuContainer > div.content {
@@ -414,6 +415,8 @@ section.mainContainer {
               text-transform: capitalize;
               font-size: 30px;
               font-weight: 700; }
+        section.mainContainer > nav > div.menuPage > div.menuContainer > div.menuPageFooter {
+          display: none; }
     section.mainContainer > nav > div.shoppingBagPage {
       display: none;
       width: 100%;
@@ -766,6 +769,14 @@ section.mainContainer {
 
 .successColor {
   color: var(--tSuccessGreen); }
+
+@keyframes pgaeAnimation {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
 
 section.swiprContainer {
   width: 100%;

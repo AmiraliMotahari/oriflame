@@ -23,6 +23,14 @@ let userPassAuth = document.getElementById("userPass");
 let searchIconRight = document.getElementById("searchIconRight");
 let searchBoxRightWrapper = document.querySelector("div.searchBoxRightWrapper");
 
+console.log(supBtn);
+window.addEventListener("resize", function (e) {
+  windowSize = window.innerWidth;
+});
+function getWindowSize(){
+  return window.innerWidth;
+}
+
 function menuButtonActivator() {
   document.getElementById("midLine").style.left = "100%";
   document.getElementById("midLine").style.opacity = "0";
@@ -36,12 +44,9 @@ function menuButtonActivator() {
   document.getElementById("botLine").style.translate = "0,-50%";
 
   document.querySelector("div.menuPage").classList.add("activator");
-
-  // elOne.style.background= "#e5e5e526";
-  // elOne.addEventListener("mouseleave", function () {
-  //     this.style.background = "";
-  //   });
-  // document.querySelector("div.besHov>div.page").style.display = "block";
+  setInterval(() => {
+      document.querySelector("div.menuPage>div.menuContainer").style.opacity = "1";
+    }, 10);
 
   flag = 1;
 }
@@ -57,7 +62,7 @@ function menuButtonDeactivator() {
   document.getElementById("botLine").style.top = "";
   document.getElementById("botLine").style.translate = "";
 
-  document.querySelector("div.menuPage").style.display = "";
+  document.querySelector("div.menuPage").classList.remove("activator");
 
   flag = 0;
 }
@@ -125,14 +130,11 @@ function miniSearchPageDeactivator(){
   searchBoxRightWrapper.classList.remove("activator");
 }
 
-window.addEventListener("resize",function(e){
-  windowSize = window.innerWidth;
-});
-
-
 
 //menu button
 menuButton.addEventListener("click", function () {
+  windowSize = getWindowSize();
+
   if(windowSize > 992){
     if (flag === 0) {
       menuButtonActivator();
@@ -151,13 +153,16 @@ menuButton.addEventListener("click", function () {
     logInPageDeactivator();
     shoppingBagPageDeactivator();
     miniSearchPageDeactivator();
-    document.querySelector("div.menuPage").style.display = "block";
+
+
+    document.querySelector("div.menuPage").classList.add("activator");
+    document.querySelector("div.menuPage>div.menuContainer").style.opacity = "1";
   }
 });
 
 //mini manu page
 miniMenuButton.addEventListener("click",function(){
-  document.querySelector("div.menuPage").style.display = "";
+  menuButtonDeactivator();
 });
 if(windowSize <= 992){
   innerGroupPage.forEach((elem) => {
@@ -324,15 +329,17 @@ userPassAuth.addEventListener("input",function(){
 
 //support button 
 supBtn.addEventListener("click",function(e){
-   supportPage.classList.add("test");
+   supportPage.style.bottom="0";
+  //supportPage.classList.add("test");
 });
 
 closeBtn.addEventListener("click",function(e){
   supportPageDeactivator();
 });
 supportMinimizeBtn.addEventListener("click", function (e) {
-  supBtn.style.backgroundColor="#333";
-  alert("d")
+   supportPage.style.bottom = "100";
+  //supportPage.classList.remove("test");
+  //alert("d")
 });
 
 
