@@ -170,9 +170,7 @@ section.mainContainer {
         background-color: var(--bgWhite);
         position: relative;
         overflow: auto;
-        transition: 300ms;
-        left: -100%;
-        animation: pgaeAnimation 500ms ease-out 1ms 1 normal; }
+        transition: 300ms; }
         section.mainContainer > nav > div.menuPage > div.menuContainer > .smallMenuButtons {
           display: flex;
           width: 100%;
@@ -1238,5 +1236,5 @@ section.supportBtn {
             section.supportBtn > div.supportPage > .supportContainer > form > div.supportBtnContainer > button:hover {
               transform: scale(1.01, 1.01); }
 
-.test {
+.supportPageActivator {
   bottom: -10px !important; }

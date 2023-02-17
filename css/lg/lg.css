@@ -1093,5 +1093,5 @@ section.supportBtn {
             section.supportBtn > div.supportPage > .supportContainer > form > div.supportBtnContainer > button:hover {
               transform: scale(1.01, 1.01); }
 
-.test {
+.supportPageActivator {
   bottom: -10px !important; }

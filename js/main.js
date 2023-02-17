@@ -1,6 +1,8 @@
 //get window size 
 let windowSize = window.innerWidth;
 let flag = 0;
+let flag2 = 0;
+let flag3 = 0;
 let menuButton = document.querySelector("div.menuButton");
 let miniMenuButton = document.querySelector("div.menuProductsButton");
 let shoppingBag = document.querySelector("div.right>div.shoppingButton");
@@ -23,12 +25,12 @@ let userPassAuth = document.getElementById("userPass");
 let searchIconRight = document.getElementById("searchIconRight");
 let searchBoxRightWrapper = document.querySelector("div.searchBoxRightWrapper");
 
-window.addEventListener("resize", function (e) {
-  windowSize = window.innerWidth;
+window.addEventListener("load",function(){
+  this.addEventListener("resize", function () {
+    windowSize = this.innerWidth;
+  });
 });
-function getWindowSize(){
-  return window.innerWidth;
-}
+
 
 function menuButtonActivator() {
   document.getElementById("midLine").style.left = "100%";
@@ -134,8 +136,6 @@ function miniSearchPageDeactivator(){
 
 //menu button
 menuButton.addEventListener("click", function () {
-  windowSize = getWindowSize();
-
   if(windowSize > 992){
     if (flag === 0) {
       menuButtonActivator();
@@ -157,7 +157,7 @@ menuButton.addEventListener("click", function () {
 
 
     document.querySelector("div.menuPage").classList.add("activator");
-    document.querySelector("div.menuPage>div.menuContainer").style.left = "0";
+    //document.querySelector("div.menuPage>div.menuContainer").style.left = "0";
   }
 });
 
@@ -177,9 +177,7 @@ if(windowSize <= 992){
 }
 
 //log in button
-document
-  .querySelector("div.left>div.logIn")
-  .addEventListener("mouseenter", function () {
+document.querySelector("div.left>div.logIn").addEventListener("mouseenter", function () {
     document
       .querySelector("div.left>div.logIn>button>span")
       .classList.remove("fa-light");
@@ -334,20 +332,38 @@ userPassAuth.addEventListener("input",function(){
    userEmailAuth.style.borderBottomColor = "";
 });
 
-//support button 
-supBtn.addEventListener("click",function(e){
-   supportPage.style.bottom="0";
-  //supportPage.classList.add("test");
-});
 
-closeBtn.addEventListener("click",function(e){
-  supportPageDeactivator();
-});
-supportMinimizeBtn.addEventListener("click", function (e) {
-   supportPage.style.bottom = "100";
-  //supportPage.classList.remove("test");
-  //alert("d")
-});
+//support button 
+function ActivateSupportPage() {
+  supportPage.classList.add("supportPageActivator");
+  setTimeout(() => {
+    supBtn.removeEventListener("click", ActivateSupportPage);
+  }, 10);
+}
+function minimizeSupportPage() {
+  supportPage.classList.remove("supportPageActivator");
+  supBtn.style.backgroundColor = "white";
+  supBtn.style.border = "2px solid #CCCCCC";
+  document.querySelector("section.supportBtn>p").style.color = "black";
+  document.querySelector("section.supportBtn>span>svg").style.fill = "black";
+  setTimeout(() => {
+    supBtn.addEventListener("click", ActivateSupportPage);
+  }, 10);
+}
+function closeSupportPage() {
+  supportPage.classList.remove("supportPageActivator");
+  supBtn.style.backgroundColor = "";
+  supBtn.style.border = "unset";
+  document.querySelector("section.supportBtn>p").style.color = "";
+  document.querySelector("section.supportBtn>span>svg").style.fill = "";
+  setTimeout(() => {
+    supBtn.addEventListener("click", ActivateSupportPage);
+  }, 10);
+}
+
+supBtn.addEventListener("click", ActivateSupportPage);
+minimizeBtn.addEventListener("click", minimizeSupportPage);
+closeBtn.addEventListener("click", closeSupportPage);
 
 
 //delivery btn
