@@ -8,7 +8,7 @@ let miniMenuButton = document.querySelector("div.menuProductsButton");
 let shoppingBag = document.querySelector("div.right>div.shoppingButton");
 let shoppingbPage = document.querySelector("div.shoppingBagPage");
 let activator = document.querySelectorAll("div.menuContainer>div.content");
-let innerGroupPage = document.querySelectorAll("div.clumnOne>div.group");
+let groupPage = document.querySelectorAll("div.group");
 let target = document.querySelector("div.menuContainer>div.content>div.page");
 let ourStoryButton = document.getElementById("ourStory");
 let ourStoryPage = document.querySelector("div.ourStoryPage");
@@ -31,6 +31,14 @@ window.addEventListener("load",function(){
   });
 });
 
+
+//testing
+
+// groupPage.forEach((elem) =>{
+//   console.log((elem.childNodes[3]) === undefined);
+// });
+
+//end
 
 function menuButtonActivator() {
   document.getElementById("midLine").style.left = "100%";
@@ -103,7 +111,14 @@ function deactivator2(elemMain) {
       elem.style.setProperty("--X", "0deg");
     }
   });
-  
+}
+function deactivator3(elemMain2) {
+  groupPage.forEach((elem) => {
+    if (elem !== elemMain2 && elem.childNodes[3] !== undefined) {
+      elem.childNodes[3].classList.remove("flexActivator");
+      elem.style.setProperty("--Y", "0deg");
+    }
+  });
 }
 function supportPageActivator() {
   supportPage.classList.add("test");
@@ -162,16 +177,49 @@ menuButton.addEventListener("click", function () {
 });
 
 
+//menu page --->page
+if(windowSize > 992){
+  activator.forEach((elem) => {
+    elem.addEventListener("mouseenter", function () {
+      deactivator();
+      elem.childNodes[3].classList.add("activator");
+    });
+  });
+}
+else if(windowSize <= 992){
+  activator.forEach((elem) => {
+    elem.addEventListener("click", function (e) {
+      e.stopPropagation();
+      deactivator2(elem);
+      console.log("100000");
+      elem.childNodes[3].classList.toggle("activator");
+      if (elem.childNodes[3].classList.contains("activator")) {
+        elem.style.setProperty("--X", "180deg");
+      } else {
+        elem.style.setProperty("--X", "0deg");
+      }
+    });
+  });
+}
+
+
 //mini manu page
 miniMenuButton.addEventListener("click",function(){
   menuButtonDeactivator();
 });
 if(windowSize <= 992){
-  innerGroupPage.forEach((elem) => {
-    elem.addEventListener("click", function () {
-      //deactivator2(elem);
-      //elem.childNodes[4].classList.toggle("flexActivator");
-      console.log(elem.childNodes[3]);
+  groupPage.forEach((elem) => {
+    elem.addEventListener("click", function(e){
+      e.stopPropagation();
+      deactivator3(elem);
+      if (elem.childNodes[3] !== undefined){
+        elem.childNodes[3].classList.toggle("flexActivator");
+        if (elem.childNodes[3].classList.contains("flexActivator")) {
+          elem.style.setProperty("--Y", "180deg");
+        } else {
+          elem.style.setProperty("--Y", "0deg");
+        }
+      }
     });
   });
 }
@@ -243,40 +291,11 @@ shoppingBag.addEventListener("click", function () {
   });
 
 shoppingBag.addEventListener("mouseleave", shoppingLogoDeactivator);
-
-
-document
-  .querySelector("div.shoppingBagPage>div.shoppingContainer")
-  .addEventListener("mouseleave", function () {
+document.querySelector("div.shoppingBagPage>div.shoppingContainer").addEventListener("mouseleave", function () {
     this.opacity = "1";
     shoppingbPage.style.display = "none";
     shoppingbPage.classList.remove("activator");
   });
-
-
-//menu page --->page
-if(windowSize > 992){
-  activator.forEach((elem) => {
-    elem.addEventListener("mouseenter", function () {
-      deactivator();
-      elem.childNodes[3].classList.add("activator");
-    });
-  });
-}
-else if(windowSize <= 992){
-  activator.forEach((elem) => {
-    elem.addEventListener("click", function () {
-      deactivator2(elem);
-      elem.childNodes[3].classList.toggle("activator");
-      if (elem.childNodes[3].classList.contains("activator")) {
-        elem.style.setProperty("--X", "180deg");
-      } else {
-        elem.style.setProperty("--X", "0deg");
-      }
-    });
-  });
-}
-
 
 
 
@@ -304,10 +323,6 @@ joinUsButton.addEventListener("click", function () {
 });
 
 //login
-
-
-
-
 logInButton.addEventListener("click", function () {
   logInPage.classList.toggle("activator");
   menuButtonDeactivator();
@@ -334,36 +349,26 @@ userPassAuth.addEventListener("input",function(){
 
 
 //support button 
-function ActivateSupportPage() {
+supBtn.addEventListener("click",function(e){
+  e.stopPropagation();
   supportPage.classList.add("supportPageActivator");
-  setTimeout(() => {
-    supBtn.removeEventListener("click", ActivateSupportPage);
-  }, 10);
-}
-function minimizeSupportPage() {
+});
+minimizeBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
   supportPage.classList.remove("supportPageActivator");
   supBtn.style.backgroundColor = "white";
   supBtn.style.border = "2px solid #CCCCCC";
   document.querySelector("section.supportBtn>p").style.color = "black";
   document.querySelector("section.supportBtn>span>svg").style.fill = "black";
-  setTimeout(() => {
-    supBtn.addEventListener("click", ActivateSupportPage);
-  }, 10);
-}
-function closeSupportPage() {
+});
+closeBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
   supportPage.classList.remove("supportPageActivator");
   supBtn.style.backgroundColor = "";
   supBtn.style.border = "unset";
   document.querySelector("section.supportBtn>p").style.color = "";
   document.querySelector("section.supportBtn>span>svg").style.fill = "";
-  setTimeout(() => {
-    supBtn.addEventListener("click", ActivateSupportPage);
-  }, 10);
-}
-
-supBtn.addEventListener("click", ActivateSupportPage);
-minimizeBtn.addEventListener("click", minimizeSupportPage);
-closeBtn.addEventListener("click", closeSupportPage);
+});
 
 
 //delivery btn
@@ -389,3 +394,5 @@ document.getElementById("deliveryClose").addEventListener("click",function(){
 // menutabs.addEventListener("click",function(){
 
 // });
+
+
