@@ -25,6 +25,13 @@ let userEmailAuth = document.getElementById("userEmail");
 let userPassAuth = document.getElementById("userPass");
 let searchIconRight = document.getElementById("searchIconRight");
 let searchBoxRightWrapper = document.querySelector("div.searchBoxRightWrapper");
+let menuLogInBtn = document.querySelector("div.menuLogInButton");
+let menuLogInPage = document.querySelector("div.menuLogInPage");
+let menuPageFooter = document.querySelector("div.menuPageFooter");
+
+
+
+
 
 window.addEventListener("load",function(){
   this.addEventListener("resize", function () {
@@ -140,6 +147,13 @@ function logInPageDeactivator() {
 function miniSearchPageDeactivator(){
   searchBoxRightWrapper.classList.remove("activator");
 }
+function toggleMenuPageDetails(){
+  menuLogInPage.classList.toggle("activator");
+  activator.forEach((elem) => {
+    elem.classList.toggle("deactivator");
+  });
+  menuPageFooter.classList.toggle("flexDeactivator");
+}
 
 
 //menu button
@@ -197,20 +211,24 @@ else if(windowSize <= 992){
 menuPage.addEventListener("click",function(e){
   e.stopPropagation();
   if (e.target === menuPage) {
-    e.target.classList.toggle("activator");
+    //e.target.classList.toggle("activator");
+    menuButtonDeactivator();
+    if(flag2 === 1){
+      toggleMenuPageDetails();
+      menuLogInBtn.style.backgroundColor = "";
+      miniMenuButton.style.backgroundColor = "";
+      flag2 = 0;
+    }
   }
 });
 
-//mini manu page
-miniMenuButton.addEventListener("click",function(){
-  menuButtonDeactivator();
-});
+
 if(windowSize <= 992){
   groupPage.forEach((elem) => {
-    elem.addEventListener("click", function(e){
+    elem.addEventListener("click", function (e) {
       e.stopPropagation();
       deactivator3(elem);
-      if (elem.childNodes[3] !== undefined){
+      if (elem.childNodes[3] !== undefined) {
         elem.childNodes[3].classList.toggle("flexActivator");
         if (elem.childNodes[3].classList.contains("flexActivator")) {
           elem.style.setProperty("--Y", "180deg");
@@ -220,16 +238,46 @@ if(windowSize <= 992){
       }
     });
   });
+  //mini manu page
+  miniMenuButton.addEventListener("click", function (e) {
+    e.stopPropagation();
+    if (flag2 === 0) {
+      menuButtonDeactivator();
+    } else {
+      toggleMenuPageDetails();
+      menuLogInBtn.style.backgroundColor = "";
+      miniMenuButton.style.backgroundColor = "";
+      flag2 = 0;
+    }
+  });
+  console.log(flag2);
 }
+
+//mini menu login page
+menuLogInBtn.addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (flag2 === 0) {
+    toggleMenuPageDetails();
+    this.style.backgroundColor= "white";
+    miniMenuButton.style.backgroundColor="#f5f5f5";
+    flag2 = 1;
+  }
+  else{
+    menuButtonDeactivator();
+    toggleMenuPageDetails();
+    this.style.backgroundColor = "";
+    miniMenuButton.style.backgroundColor = "";
+    flag2 = 0;
+    console.log(flag2);
+  }
+});
+
+
 
 //log in button
 document.querySelector("div.left>div.logIn").addEventListener("mouseenter", function () {
-    document
-      .querySelector("div.left>div.logIn>button>span")
-      .classList.remove("fa-light");
-    document
-      .querySelector("div.left>div.logIn>button>span")
-      .classList.add("fa-solid");
+    document.querySelector("div.left>div.logIn>button>span").classList.remove("fa-light");
+    document.querySelector("div.left>div.logIn>button>span").classList.add("fa-solid");
   });
 document
   .querySelector("div.left>div.logIn")
