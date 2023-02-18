@@ -8,6 +8,7 @@ let miniMenuButton = document.querySelector("div.menuProductsButton");
 let shoppingBag = document.querySelector("div.right>div.shoppingButton");
 let shoppingbPage = document.querySelector("div.shoppingBagPage");
 let activator = document.querySelectorAll("div.menuContainer>div.content");
+let menuPage = document.querySelector("section.mainContainer>nav>div.menuPage");
 let groupPage = document.querySelectorAll("div.group");
 let target = document.querySelector("div.menuContainer>div.content>div.page");
 let ourStoryButton = document.getElementById("ourStory");
@@ -31,14 +32,6 @@ window.addEventListener("load",function(){
   });
 });
 
-
-//testing
-
-// groupPage.forEach((elem) =>{
-//   console.log((elem.childNodes[3]) === undefined);
-// });
-
-//end
 
 function menuButtonActivator() {
   document.getElementById("midLine").style.left = "100%";
@@ -201,7 +194,12 @@ else if(windowSize <= 992){
     });
   });
 }
-
+menuPage.addEventListener("click",function(e){
+  e.stopPropagation();
+  if (e.target === menuPage) {
+    e.target.classList.toggle("activator");
+  }
+});
 
 //mini manu page
 miniMenuButton.addEventListener("click",function(){
@@ -271,6 +269,12 @@ searchIconRight.addEventListener("click", function () {
   logInPageDeactivator();
   shoppingBagPageDeactivator();
 });
+searchBoxRightWrapper.addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (e.target === searchBoxRightWrapper) {
+    e.target.classList.toggle("activator");
+  }
+});
 
 //shopping bag
 shoppingBag.addEventListener("mouseenter", function () {
@@ -300,13 +304,20 @@ document.querySelector("div.shoppingBagPage>div.shoppingContainer").addEventList
 
 
 //ourstory page
-ourStoryButton.addEventListener("click", function () {
+ourStoryButton.addEventListener("click", function (e) {
+  e.stopPropagation();
   ourStoryPage.classList.toggle("activator");
   menuButtonDeactivator();
   joinUsPageDeactivator();
   logInPageDeactivator();
   shoppingBagPageDeactivator();
   miniSearchPageDeactivator();
+});
+ourStoryPage.addEventListener("click",function(e){
+  e.stopPropagation();
+  if (e.target === ourStoryPage) {
+    e.target.classList.toggle("activator");
+  }
 });
 // document.querySelector("div.ourStoryPage>div.ourStoryContainer").addEventListener("mouseleave",function(){
 //     ourStoryPageDeactivator();
@@ -321,6 +332,13 @@ joinUsButton.addEventListener("click", function () {
   shoppingBagPageDeactivator();
   miniSearchPageDeactivator();
 });
+joinUsPage.addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (e.target === joinUsPage) {
+    e.target.classList.toggle("activator");
+  }
+  console.log(e.target);
+});
 
 //login
 logInButton.addEventListener("click", function () {
@@ -331,6 +349,13 @@ logInButton.addEventListener("click", function () {
   shoppingBagPageDeactivator();
   miniSearchPageDeactivator();
 });
+logInPage.addEventListener("click", function (e) {
+  e.stopPropagation();
+  if (e.target === logInPage) {
+    e.target.classList.toggle("activator");
+  }
+});
+
 
 userEmailAuth.addEventListener("input",function(){
   document.querySelector("label[for=userEmail]").style.color = "#68BB93";
