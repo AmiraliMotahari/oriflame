@@ -1159,9 +1159,34 @@ section.menuTabsContainer {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  position: relative;
   margin-top: 56px;
   background-color: var(--bFa);
   border-bottom: 4px solid whitesmoke; }
+  section.menuTabsContainer > span.showNextTab {
+    display: block;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    color: var(--t5);
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    background-color: var(--bFa); }
+  section.menuTabsContainer > span.showPrevTab {
+    display: none;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    position: absolute;
+    color: var(--t5);
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background-color: var(--bFa); }
   section.menuTabsContainer > div.tabsContainer {
     display: flex;
     height: 100%;
@@ -1169,7 +1194,9 @@ section.menuTabsContainer {
     justify-content: center;
     align-items: center;
     column-gap: 50px;
-    overflow: scroll; }
+    overflow: hidden;
+    position: absolute;
+    left: 48px; }
     section.menuTabsContainer > div.tabsContainer > div.tab {
       white-space: nowrap; }
       section.menuTabsContainer > div.tabsContainer > div.tab > a {
@@ -1196,10 +1223,14 @@ section.menuTabsContainer {
           section.menuTabsContainer > div.tabsContainer > div.tab > a:hover > span > svg {
             fill: var(--t5); }
 
-.test2 {
-  width: 44px;
-  height: 44px;
-  background-color: red; }
+.clickShowMore {
+  right: 48px !important; }
+
+.activator {
+  display: block !important; }
+
+.deactivator {
+  display: none !important; }
 
 header {
   overflow: hidden; }

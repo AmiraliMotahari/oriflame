@@ -842,13 +842,16 @@ section.swiprContainer {
             position: absolute;
             top: 50%;
             left: 0;
-            transform: translateY(-50%); }
+            transform: translateY(-50%);
+            padding: 0 calc(100% / calc(1536/180)); }
             section.swiprContainer .swiper > .swiper-wrapper > .swiper-slide > div.slideWrapper > div.contentWrapper > .swiperContent {
               display: flex;
+              width: 100%;
+              max-width: 1366px;
+              margin: 0 auto;
               flex-flow: column;
               justify-content: center;
-              align-items: end;
-              padding: 0 calc(100% / calc(1536/180)); }
+              align-items: end; }
               section.swiprContainer .swiper > .swiper-wrapper > .swiper-slide > div.slideWrapper > div.contentWrapper > .swiperContent > h4 {
                 width: 450px;
                 font-size: 14px;
@@ -905,6 +908,10 @@ section.menuTabsContainer {
   margin-top: 80px;
   background-color: var(--bFa);
   border-bottom: 4px solid whitesmoke; }
+  section.menuTabsContainer > span.showNextTab {
+    display: none; }
+  section.menuTabsContainer > span.showPrevTab {
+    display: none; }
   section.menuTabsContainer > div.tabsContainer {
     display: flex;
     height: 100%;

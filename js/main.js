@@ -28,7 +28,9 @@ let searchBoxRightWrapper = document.querySelector("div.searchBoxRightWrapper");
 let menuLogInBtn = document.querySelector("div.menuLogInButton");
 let menuLogInPage = document.querySelector("div.menuLogInPage");
 let menuPageFooter = document.querySelector("div.menuPageFooter");
-
+let tabsContainer = document.querySelector("div.tabsContainer");
+let showNextTab = document.querySelector("section.menuTabsContainer>span.showNextTab");
+let showPervTab = document.querySelector("section.menuTabsContainer>span.showPrevTab");
 
 
 
@@ -450,22 +452,43 @@ document.getElementById("deliveryClose").addEventListener("click",function(){
 });
 
 //menu tabs
-// let menutabs = document.querySelector("div.menuTabsContainer");
-// let menutabs2 = document.querySelector("section.menuTabsContainer>div.tabsContainer");
-// let menutabs3 = menutabs2.firstChild;
-// let emptyDiv = document.createElement("div");
-// emptyDiv.style.width="88px";
-// emptyDiv.style.height = "44px";
-// emptyDiv.style.backgroundColor = "black";
 
-// menutabs2.insertBefore(emptyDiv, menutabs3);
-
-// // window.document.addEventListener("resize",function(){
-// //   menutabs2.append(emptyDiv);
-// // });
-
-// menutabs.addEventListener("click",function(){
-
-// });
-
-
+//tabsContainer
+let flagMneuTab = 0;
+showNextTab.addEventListener("click",function(e){ 
+  e.stopPropagation();
+  tabsContainer.classList.add("clickShowMore");
+  showPervTab.classList.add("activator");
+  if (windowSize > 576 && windowSize < 768 && flagMneuTab <= 135) {
+    tabsContainer.style.left = `${-flagMneuTab}%`;
+    flagMneuTab += 135;
+  }
+  else if (windowSize < 576 && flagMneuTab <= 245) {
+    flagMneuTab += 35;
+    tabsContainer.style.left = `${-flagMneuTab}%`;
+    console.log(flagMneuTab);
+  }
+  if(windowSize < 576 && flagMneuTab > 245){
+    showNextTab.classList.add("deactivator");
+  }
+  if (windowSize > 576 && (windowSize >= 768 || flagMneuTab > 135)) {
+    showNextTab.classList.add("deactivator");
+  }
+});
+showPervTab.addEventListener("click",function(e){
+  e.stopPropagation();
+  showNextTab.classList.remove("deactivator");
+  if (windowSize > 576 && windowSize < 768 && flagMneuTab > 135) {
+    flagMneuTab -= 135;
+    tabsContainer.style.left = "0%";
+  } else if ((windowSize > 576 && windowSize >= 768) || flagMneuTab <= 135) {
+    flagMneuTab -= 135;
+    tabsContainer.classList.remove("clickShowMore");
+    this.classList.remove("activator");
+    tabsContainer.style.left = "48px";
+  } else if (windowSize < 576 && flagMneuTab > 0 ) {
+    flagMneuTab -= 35;
+    tabsContainer.style.left = `${-flagMneuTab}%`;
+    console.log(flagMneuTab);
+  }
+});
