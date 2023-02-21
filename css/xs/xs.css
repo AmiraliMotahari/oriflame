@@ -1276,7 +1276,7 @@ section.supportBtn {
     section.supportBtn > span > svg {
       fill: var(--tWhite); }
   section.supportBtn > div.supportPage {
-    width: 320px;
+    width: 275px;
     height: 460px;
     position: absolute;
     right: 0;
