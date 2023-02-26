@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif,sans-serif; }
+  font-family: sansOri,Arial, sans-serif; }
 
 :root {
   --bgWhite: white;
@@ -35,10 +35,24 @@
   --t5: #555;
   --t6: #666;
   --t9: #999;
-  --t80: #808080; }
-
-:root {
+  --t80: #808080;
   --s15:15px;
   --X: 0deg;
-  --Y: 0deg; 
-}
+  --Y: 0deg;
+  --menuHeight: 80px; }
+
+@font-face {
+  font-family: sansOri;
+  src: url(../oriflameFonts/sans-regular.woff2); }
+
+@font-face {
+  font-family: sansCondensedBold;
+  src: url(../oriflameFonts/sans-condensed-bold.woff2); }
+
+@font-face {
+  font-family: sansOriBold;
+  src: url(../oriflameFonts/sans-bold.woff2); }
+
+@font-face {
+  font-family: sansOriIcons;
+  src: url(../oriflameFonts/OriflameWebIcons.woff2); }

@@ -31,8 +31,8 @@ let menuPageFooter = document.querySelector("div.menuPageFooter");
 let tabsContainer = document.querySelector("div.tabsContainer");
 let showNextTab = document.querySelector("section.menuTabsContainer>span.showNextTab");
 let showPervTab = document.querySelector("section.menuTabsContainer>span.showPrevTab");
-
-
+let root = document.querySelector(":root");
+let rootStyle = getComputedStyle(root);
 
 
 window.addEventListener("load",function(){
@@ -40,7 +40,9 @@ window.addEventListener("load",function(){
     windowSize = this.innerWidth;
   });
 });
-
+document.addEventListener("scroll",function(){
+  root.style.setProperty("--menuHeight","60px");
+});
 
 function menuButtonActivator() {
   document.getElementById("midLine").style.left = "100%";
