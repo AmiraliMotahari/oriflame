@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: sansOri,Arial, sans-serif; }
 
+main {
+  overflow-x: hidden; }
+
 :root {
   --bgWhite: white;
   --bgDark: #333;
