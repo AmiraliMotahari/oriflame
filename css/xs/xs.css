@@ -1835,7 +1835,6 @@ section.skinAd {
   section.skinAd > .adContainer {
     display: grid;
     max-width: 1366px;
-    margin: 0 auto;
     grid-template-areas: "details" "banner";
     grid-template-columns: 1fr;
     justify-self: center;
@@ -1878,8 +1877,7 @@ section.skinAd {
       height: 100%;
       padding: 20px 15px;
       background-color: rgba(245, 245, 245, 0.6);
-      position: relative;
-      overflow: hidden; }
+      position: relative; }
       section.skinAd > .adContainer > .details > h2 {
         font-size: 25px;
         font-weight: 700;
@@ -1906,3 +1904,20 @@ section.skinAd {
         padding: 12px 23px;
         border: 1px solid var(--tDark);
         border-radius: 25px; }
+      section.skinAd > .adContainer > .details > .backCircle {
+        width: calc(235px / 2);
+        height: 235px;
+        position: absolute;
+        top: -50%;
+        right: 0;
+        z-index: -1;
+        overflow: hidden; }
+        section.skinAd > .adContainer > .details > .backCircle > .circle {
+          width: 235px;
+          height: 235px;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(0, -50%);
+          border-radius: 50%;
+          background-color: #f0effb; }
