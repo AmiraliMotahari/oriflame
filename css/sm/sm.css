@@ -1810,3 +1810,76 @@ section.bestOffers {
         line-height: 45px; }
         section.bestOffers > .bestOffersContainer > .productViewOffer > a:hover {
           background-color: #3333330A; }
+
+section.skinAd {
+  width: 100%;
+  margin-bottom: 100px; }
+  section.skinAd > .adContainer {
+    display: grid;
+    max-width: 1366px;
+    margin: 0 auto;
+    grid-template-areas: "details" "banner";
+    grid-template-columns: 1fr;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center; }
+    section.skinAd > .adContainer > .banner {
+      grid-area: banner;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      justify-self: center; }
+      section.skinAd > .adContainer > .banner > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: -4px; }
+      section.skinAd > .adContainer > .banner::before {
+        display: block;
+        width: 100%;
+        content: "Science in perfect sync with your skin";
+        border-radius: 50%;
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 700;
+        font-family: sansCondensedBold, sansOri, sans-serif;
+        color: white; }
+    section.skinAd > .adContainer > .details {
+      grid-area: details;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: start;
+      width: 100%;
+      height: 100%;
+      padding: 0 80px 5px;
+      background-color: var(--bf5f5f5); }
+      section.skinAd > .adContainer > .details > h2 {
+        font-size: 40px;
+        font-weight: 700;
+        font-family: sansOriBold, sansOri, sans-serif;
+        color: var(--tDark);
+        margin-bottom: 20px; }
+      section.skinAd > .adContainer > .details > p {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: sansOri;
+        color: var(--tDark);
+        margin-bottom: 30px; }
+      section.skinAd > .adContainer > .details > a {
+        display: block;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: sansOriBold, sansOri, sans-serif;
+        color: var(--tDark);
+        text-transform: uppercase;
+        padding: 12px 23px;
+        border: 1px solid var(--tDark);
+        border-radius: 25px; }
