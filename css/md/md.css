@@ -2105,3 +2105,104 @@ section.hairNail {
             transform: scale(1.1, 1.1); }
     section.hairNail > .hairNailContainer > .productShopNow {
       display: none; }
+
+section.peresentationBeauty {
+  width: 100%;
+  margin-bottom: 100px; }
+  section.peresentationBeauty > .container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center; }
+    section.peresentationBeauty > .container > .signature {
+      display: block;
+      text-align: center; }
+    section.peresentationBeauty > .container > .paragraph {
+      width: 100%;
+      position: relative;
+      margin: 20px 0 30px; }
+      section.peresentationBeauty > .container > .paragraph > p {
+        color: var(--tDark);
+        text-align: center;
+        max-width: 600px;
+        min-height: 45px;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: capitalize;
+        margin: 0 auto; }
+    section.peresentationBeauty > .container > .wrapper {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px; }
+      section.peresentationBeauty > .container > .wrapper > .content {
+        max-width: 600px; }
+        section.peresentationBeauty > .container > .wrapper > .content > a {
+          display: flex;
+          width: 100%;
+          text-decoration: none;
+          flex-flow: column;
+          gap: 20px;
+          justify-content: center;
+          align-items: center;
+          position: relative; }
+          section.peresentationBeauty > .container > .wrapper > .content > a > .imageFrame {
+            width: 100%;
+            position: relative; }
+            section.peresentationBeauty > .container > .wrapper > .content > a > .imageFrame > img {
+              width: 100%;
+              object-fit: cover;
+              object-position: center;
+              border-radius: 5px;
+              margin-bottom: -5px; }
+            section.peresentationBeauty > .container > .wrapper > .content > a > .imageFrame::before {
+              content: "";
+              display: none;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.3);
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 2;
+              border-radius: 5px; }
+            section.peresentationBeauty > .container > .wrapper > .content > a > .imageFrame:hover::before {
+              display: block; }
+          section.peresentationBeauty > .container > .wrapper > .content > a > .details {
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: center; }
+            section.peresentationBeauty > .container > .wrapper > .content > a > .details:hover > h3 {
+              opacity: 0.75; }
+            section.peresentationBeauty > .container > .wrapper > .content > a > .details > p {
+              color: var(--tDark);
+              font-size: 14px;
+              font-weight: 700;
+              text-transform: uppercase;
+              padding: 0 15px;
+              text-align: center; }
+            section.peresentationBeauty > .container > .wrapper > .content > a > .details > h3 {
+              color: var(--t5);
+              font-size: 30px;
+              font-weight: 700;
+              padding: 0 15px;
+              text-align: center; }
+          section.peresentationBeauty > .container > .wrapper > .content > a > span {
+            display: block;
+            height: 45px;
+            padding: 0 23px;
+            border-radius: 25px;
+            border: 1px solid var(--tDark);
+            color: var(--tDark);
+            background-color: var(--bgWhite);
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 45px;
+            transition: 300ms; }
+            section.peresentationBeauty > .container > .wrapper > .content > a > span:hover {
+              background-color: #3333330a; }
