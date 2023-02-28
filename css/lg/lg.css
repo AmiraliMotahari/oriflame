@@ -111,12 +111,14 @@ section.mainContainer {
         display: block;
         width: 30px;
         height: 30px;
-        font-size: 28px;
         text-align: center; }
         section.mainContainer > nav > div.right > div.shoppingButton > a {
           text-decoration: none;
           text-align: center;
           color: var(--tOriGreen); }
+          section.mainContainer > nav > div.right > div.shoppingButton > a > span {
+            font-size: 24px;
+            line-height: 30px; }
       section.mainContainer > nav > div.right > .searchBox {
         display: flex;
         column-gap: 5px;
@@ -125,15 +127,15 @@ section.mainContainer {
         align-items: center;
         background-color: var(--bf5f5f5);
         border-radius: 20px; }
-        section.mainContainer > nav > div.right > .searchBox > label[for=search] {
+        section.mainContainer > nav > div.right > .searchBox > label[for="search"] {
           color: var(--tOriGreen);
           font-size: 20px; }
-        section.mainContainer > nav > div.right > .searchBox > input[id=search] {
+        section.mainContainer > nav > div.right > .searchBox > input[id="search"] {
           all: unset;
           color: var(--tDark);
           font-size: 12px;
           padding-left: 5px; }
-          section.mainContainer > nav > div.right > .searchBox > input[id=search]::placeholder {
+          section.mainContainer > nav > div.right > .searchBox > input[id="search"]::placeholder {
             color: var(--tDark);
             font-size: 12px;
             font-weight: lighter; }
@@ -179,7 +181,8 @@ section.mainContainer {
             position: relative; }
             section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > a:hover {
               background-color: #e5e5e526; }
-          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(16) > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(15) > a:hover {
+          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(16) > a:hover,
+          section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(15) > a:hover {
             background-color: unset;
             color: var(--tOriGreen); }
           section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(6) > a:hover {
@@ -315,34 +318,52 @@ section.mainContainer {
                     width: 28px;
                     height: 28px;
                     color: var(--tDark); }
-              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group {
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group,
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group,
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group,
+              section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group {
                 display: flex;
                 flex-flow: column;
                 justify-content: left;
                 align-items: left;
                 margin-bottom: 30px;
                 padding-left: 5px; }
-                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > a {
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > a,
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > a,
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > a,
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > a {
                   text-decoration: none;
                   color: var(--tDark);
                   font-size: 14px;
                   font-weight: 700;
                   margin: 0 0 15px; }
-                  section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > a:hover {
+                  section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > a:hover,
+                  section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > a:hover,
+                  section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > a:hover,
+                  section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > a:hover {
                     color: var(--tOriGreen);
                     font-weight: 700; }
-                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > .innerGroup, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > .innerGroup, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > .innerGroup, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > .innerGroup {
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > .innerGroup,
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > .innerGroup,
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > .innerGroup,
+                section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > .innerGroup {
                   display: flex;
                   flex-flow: column;
                   justify-content: left;
                   align-items: left; }
-                  section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > .innerGroup > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > .innerGroup > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > .innerGroup > a, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > .innerGroup > a {
+                  section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > .innerGroup > a,
+                  section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > .innerGroup > a,
+                  section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > .innerGroup > a,
+                  section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > .innerGroup > a {
                     text-decoration: none;
                     color: var(--tDark);
                     font-size: 14px;
                     font-weight: 400;
                     margin: 0 0 15px; }
-                    section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > .innerGroup > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > .innerGroup > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > .innerGroup > a:hover, section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > .innerGroup > a:hover {
+                    section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper > div.clumnOne > div.group > .innerGroup > a:hover,
+                    section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnTwo > div.group > .innerGroup > a:hover,
+                    section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnThree > div.group > .innerGroup > a:hover,
+                    section.mainContainer > nav > div.menuPage > div.menuContainer > div.content > div.page > div.wrapper div.clumnFour > div.group > .innerGroup > a:hover {
                       color: var(--tOriGreen);
                       font-weight: 700; }
           section.mainContainer > nav > div.menuPage > div.menuContainer > div.content:nth-of-type(3) > div.page {
@@ -604,9 +625,9 @@ section.mainContainer {
                 opacity: 1;
                 transition: 300ms; }
               section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content > a:hover > span {
-                background-color: #CDA89C;
+                background-color: #cda89c;
                 transition: 300ms;
-                border: 2px solid #CDA89C; }
+                border: 2px solid #cda89c; }
               section.mainContainer > nav > div.joinUsPage > div.joinUsContainer > div.top > .content > a > span {
                 position: absolute;
                 display: block;
@@ -675,14 +696,16 @@ section.mainContainer {
               font-weight: 400;
               text-align: left;
               margin-bottom: 10px; }
-            section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form > #userEmail, section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form #userPass {
+            section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form > #userEmail,
+            section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form #userPass {
               all: unset;
               width: 100%;
               border: unset;
               border-bottom: 1px solid var(--t9);
               margin-bottom: 10px;
               padding: 4px 0 5px; }
-              section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form > #userEmail:hover, section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form #userPass:hover {
+              section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form > #userEmail:hover,
+              section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form #userPass:hover {
                 border-bottom: 1px solid var(--tDark); }
             section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > form > #submitLogInButton {
               all: unset;
@@ -761,7 +784,7 @@ section.mainContainer {
               margin-bottom: 5px;
               line-height: 24px; }
               section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.register > a:hover {
-                background-color: #0000000D; }
+                background-color: #0000000d; }
               section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.register > a:last-of-type {
                 background-color: unset;
                 font-size: 12px;
