@@ -152,6 +152,7 @@ section.mainContainer {
       left: 0;
       background-color: rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
       overflow: auto; }
       section.mainContainer > nav > div.menuPage > div.menuContainer {
         width: 100%;
@@ -448,6 +449,7 @@ section.mainContainer {
       height: calc(100vh - var(--menuHeight));
       background-color: rgba(0, 0, 0, 0.2);
       backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
       position: absolute;
       top: var(--menuHeight);
       left: 0;
@@ -511,7 +513,8 @@ section.mainContainer {
       top: var(--menuHeight);
       left: 0;
       background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(5px); }
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px); }
       section.mainContainer > nav > div.ourStoryPage > .ourStoryContainer {
         width: 100%;
         height: 333px;
@@ -578,7 +581,8 @@ section.mainContainer {
       top: var(--menuHeight);
       left: 0;
       background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(5px); }
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px); }
       section.mainContainer > nav > div.joinUsPage > div.joinUsContainer {
         width: 100%;
         background-color: var(--bgWhite);
@@ -661,7 +665,8 @@ section.mainContainer {
       top: var(--menuHeight);
       left: 0;
       background-color: rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(5px); }
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px); }
       section.mainContainer > nav > div.logInPage > div.logInContainer {
         width: 280px;
         height: 100%;
@@ -732,30 +737,28 @@ section.mainContainer {
               text-decoration-line: underline;
               text-transform: capitalize; }
           section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton {
+            width: 100%;
             height: 40px;
-            text-align: center;
-            border-radius: 25px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-            margin: 0 20px; }
+            padding: 0 20px; }
             section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton > a {
               display: flex;
               width: 100%;
               flex-flow: row nowrap;
-              justify-content: center;
+              justify-content: space-around;
               align-items: center;
               text-decoration: none;
+              column-gap: 10px;
               color: var(--tDark);
               font-size: 12px;
               font-weight: 700;
               text-align: left;
               text-align: center;
-              line-height: 40px; }
+              line-height: 40px;
+              border-radius: 25px;
+              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
               section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton > a > span:first-of-type {
                 font-size: 32px;
-                color: #3579ea;
-                margin-left: 8px; }
-              section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.facebookButton > a > span:last-of-type {
-                margin: 0 32px; }
+                color: #3579ea; }
           section.mainContainer > nav > div.logInPage > div.logInContainer > div.wrapper > div.register {
             width: 100%;
             display: flex;
@@ -1102,7 +1105,7 @@ section.supportBtn {
           column-gap: 8px; }
           section.supportBtn > div.supportPage > .supportContainer > form > div.row > label {
             display: block;
-            width: 58.2px;
+            width: calc(100% - calc(100% - 58.2px - 8px));
             height: 40px;
             font-size: 10.5px;
             font-weight: 700;
