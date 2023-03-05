@@ -1,4 +1,4 @@
-//get window size 
+//get window size
 let windowSize = window.innerWidth;
 let flag = 0;
 let flag2 = 0;
@@ -29,19 +29,24 @@ let menuLogInBtn = document.querySelector("div.menuLogInButton");
 let menuLogInPage = document.querySelector("div.menuLogInPage");
 let menuPageFooter = document.querySelector("div.menuPageFooter");
 let tabsContainer = document.querySelector("div.tabsContainer");
-let showNextTab = document.querySelector("section.menuTabsContainer>span.showNextTab");
-let showPervTab = document.querySelector("section.menuTabsContainer>span.showPrevTab");
+let showNextTab = document.querySelector(
+  "section.menuTabsContainer>span.showNextTab"
+);
+let showPervTab = document.querySelector(
+  "section.menuTabsContainer>span.showPrevTab"
+);
 let root = document.querySelector(":root");
 let rootStyle = getComputedStyle(root);
+let playVid = document.querySelector("button[id=playVid]");
+let vid1 = document.querySelector("video[id=vid1]");
 
-
-window.addEventListener("load",function(){
+window.addEventListener("load", function () {
   this.addEventListener("resize", function () {
     windowSize = this.innerWidth;
   });
 });
-document.addEventListener("scroll",function(){
-  root.style.setProperty("--menuHeight","60px");
+document.addEventListener("scroll", function () {
+  root.style.setProperty("--menuHeight", "60px");
 });
 
 function menuButtonActivator() {
@@ -58,8 +63,9 @@ function menuButtonActivator() {
 
   document.querySelector("div.menuPage").classList.add("activator");
   setInterval(() => {
-      document.querySelector("div.menuPage>div.menuContainer").style.opacity = "1";
-    }, 10);
+    document.querySelector("div.menuPage>div.menuContainer").style.opacity =
+      "1";
+  }, 10);
 
   flag = 1;
 }
@@ -148,10 +154,10 @@ function logInPageActivator() {
 function logInPageDeactivator() {
   logInPage.classList.remove("activator");
 }
-function miniSearchPageDeactivator(){
+function miniSearchPageDeactivator() {
   searchBoxRightWrapper.classList.remove("activator");
 }
-function toggleMenuPageDetails(){
+function toggleMenuPageDetails() {
   menuLogInPage.classList.toggle("activator");
   activator.forEach((elem) => {
     elem.classList.toggle("deactivator");
@@ -159,10 +165,9 @@ function toggleMenuPageDetails(){
   menuPageFooter.classList.toggle("flexDeactivator");
 }
 
-
 //menu button
 menuButton.addEventListener("click", function () {
-  if(windowSize > 992){
+  if (windowSize > 992) {
     if (flag === 0) {
       menuButtonActivator();
       ourStoryPageDeactivator();
@@ -173,31 +178,27 @@ menuButton.addEventListener("click", function () {
     } else {
       menuButtonDeactivator();
     }
-  }
-  else if (windowSize < 992) {
+  } else if (windowSize < 992) {
     ourStoryPageDeactivator();
     joinUsPageDeactivator();
     logInPageDeactivator();
     shoppingBagPageDeactivator();
     miniSearchPageDeactivator();
 
-
     document.querySelector("div.menuPage").classList.add("activator");
     //document.querySelector("div.menuPage>div.menuContainer").style.left = "0";
   }
 });
 
-
 //menu page --->page
-if(windowSize > 992){
+if (windowSize > 992) {
   activator.forEach((elem) => {
     elem.addEventListener("mouseenter", function () {
       deactivator();
       elem.childNodes[3].classList.add("activator");
     });
   });
-}
-else if(windowSize <= 992){
+} else if (windowSize <= 992) {
   activator.forEach((elem) => {
     elem.addEventListener("click", function (e) {
       e.stopPropagation();
@@ -212,12 +213,12 @@ else if(windowSize <= 992){
     });
   });
 }
-menuPage.addEventListener("click",function(e){
+menuPage.addEventListener("click", function (e) {
   e.stopPropagation();
   if (e.target === menuPage) {
     //e.target.classList.toggle("activator");
     menuButtonDeactivator();
-    if(flag2 === 1){
+    if (flag2 === 1) {
       toggleMenuPageDetails();
       menuLogInBtn.style.backgroundColor = "";
       miniMenuButton.style.backgroundColor = "";
@@ -226,8 +227,7 @@ menuPage.addEventListener("click",function(e){
   }
 });
 
-
-if(windowSize <= 992){
+if (windowSize <= 992) {
   groupPage.forEach((elem) => {
     elem.addEventListener("click", function (e) {
       e.stopPropagation();
@@ -262,11 +262,10 @@ menuLogInBtn.addEventListener("click", function (e) {
   e.stopPropagation();
   if (flag2 === 0) {
     toggleMenuPageDetails();
-    this.style.backgroundColor= "white";
-    miniMenuButton.style.backgroundColor="#f5f5f5";
+    this.style.backgroundColor = "white";
+    miniMenuButton.style.backgroundColor = "#f5f5f5";
     flag2 = 1;
-  }
-  else{
+  } else {
     menuButtonDeactivator();
     toggleMenuPageDetails();
     this.style.backgroundColor = "";
@@ -276,12 +275,16 @@ menuLogInBtn.addEventListener("click", function (e) {
   }
 });
 
-
-
 //log in button
-document.querySelector("div.left>div.logIn").addEventListener("mouseenter", function () {
-    document.querySelector("div.left>div.logIn>button>span").classList.remove("fa-light");
-    document.querySelector("div.left>div.logIn>button>span").classList.add("fa-solid");
+document
+  .querySelector("div.left>div.logIn")
+  .addEventListener("mouseenter", function () {
+    document
+      .querySelector("div.left>div.logIn>button>span")
+      .classList.remove("fa-light");
+    document
+      .querySelector("div.left>div.logIn>button>span")
+      .classList.add("fa-solid");
   });
 document
   .querySelector("div.left>div.logIn")
@@ -295,12 +298,16 @@ document
   });
 
 //search box
-document.querySelector("div.searchBox>input").addEventListener("focus", function () {
+document
+  .querySelector("div.searchBox>input")
+  .addEventListener("focus", function () {
     document.querySelector("div.searchBox>span").style.visibility = "visible";
     document.querySelector("div.searchBox").style.boxShadow =
       "0 2px 3px rgba(0,0,0,0.16)";
   });
-document.querySelector("div.searchBox>span").addEventListener("click", function () {
+document
+  .querySelector("div.searchBox>span")
+  .addEventListener("click", function () {
     document.querySelector("div.searchBox>span").style.visibility = "hidden";
     document.querySelector("div.searchBox").style.boxShadow = "";
   });
@@ -330,8 +337,12 @@ searchBoxRightWrapper.addEventListener("click", function (e) {
 
 //shopping bag
 shoppingBag.addEventListener("mouseenter", function () {
-  document.querySelector("div.right>div.shoppingButton>a>span").classList.remove("fa-light");
-  document.querySelector("div.right>div.shoppingButton>a>span").classList.add("fa-solid");
+  document
+    .querySelector("div.right>div.shoppingButton>a>span")
+    .classList.remove("fa-light");
+  document
+    .querySelector("div.right>div.shoppingButton>a>span")
+    .classList.add("fa-solid");
 
   shoppingbPage.classList.add("activator");
   setInterval(() => {
@@ -342,18 +353,18 @@ shoppingBag.addEventListener("mouseenter", function () {
   shoppingBagPageActivator();
 });
 shoppingBag.addEventListener("click", function () {
-    shoppingbPage.classList.toggle("activator");
-    shoppingBagPageActivator();
-  });
+  shoppingbPage.classList.toggle("activator");
+  shoppingBagPageActivator();
+});
 
 shoppingBag.addEventListener("mouseleave", shoppingLogoDeactivator);
-document.querySelector("div.shoppingBagPage>div.shoppingContainer").addEventListener("mouseleave", function () {
+document
+  .querySelector("div.shoppingBagPage>div.shoppingContainer")
+  .addEventListener("mouseleave", function () {
     this.opacity = "1";
     shoppingbPage.style.display = "none";
     shoppingbPage.classList.remove("activator");
   });
-
-
 
 //ourstory page
 ourStoryButton.addEventListener("click", function (e) {
@@ -365,7 +376,7 @@ ourStoryButton.addEventListener("click", function (e) {
   shoppingBagPageDeactivator();
   miniSearchPageDeactivator();
 });
-ourStoryPage.addEventListener("click",function(e){
+ourStoryPage.addEventListener("click", function (e) {
   e.stopPropagation();
   if (e.target === ourStoryPage) {
     e.target.classList.toggle("activator");
@@ -408,25 +419,23 @@ logInPage.addEventListener("click", function (e) {
   }
 });
 
-
-userEmailAuth.addEventListener("input",function(){
+userEmailAuth.addEventListener("input", function () {
   document.querySelector("label[for=userEmail]").style.color = "#68BB93";
   this.style.borderBottomColor = "#68BB93";
 
   userPassAuth.style.borderBottomColor = "";
   document.querySelector("label[for=userPass]").style.color = "";
 });
-userPassAuth.addEventListener("input",function(){
+userPassAuth.addEventListener("input", function () {
   document.querySelector("label[for=userPass]").style.color = "#68BB93";
   this.style.borderBottomColor = "#68BB93";
 
-   document.querySelector("label[for=userEmail]").style.color = "";
-   userEmailAuth.style.borderBottomColor = "";
+  document.querySelector("label[for=userEmail]").style.color = "";
+  userEmailAuth.style.borderBottomColor = "";
 });
 
-
-//support button 
-supBtn.addEventListener("click",function(e){
+//support button
+supBtn.addEventListener("click", function (e) {
   e.stopPropagation();
   supportPage.classList.add("supportPageActivator");
 });
@@ -447,37 +456,36 @@ closeBtn.addEventListener("click", function (e) {
   document.querySelector("section.supportBtn>span>svg").style.fill = "";
 });
 
-
 //delivery btn
-document.getElementById("deliveryClose").addEventListener("click",function(){
-  document.querySelector("section.swiprContainer>div.delivery").style.display="none";
+document.getElementById("deliveryClose").addEventListener("click", function () {
+  document.querySelector("section.swiprContainer>div.delivery").style.display =
+    "none";
 });
 
 //menu tabs
 
 //tabsContainer
 let flagMneuTab = 0;
-showNextTab.addEventListener("click",function(e){ 
+showNextTab.addEventListener("click", function (e) {
   e.stopPropagation();
   tabsContainer.classList.add("clickShowMore");
   showPervTab.classList.add("activator");
   if (windowSize > 576 && windowSize < 768 && flagMneuTab <= 135) {
     tabsContainer.style.left = `${-flagMneuTab}%`;
     flagMneuTab += 135;
-  }
-  else if (windowSize < 576 && flagMneuTab <= 245) {
+  } else if (windowSize < 576 && flagMneuTab <= 245) {
     flagMneuTab += 35;
     tabsContainer.style.left = `${-flagMneuTab}%`;
     console.log(flagMneuTab);
   }
-  if(windowSize < 576 && flagMneuTab > 245){
+  if (windowSize < 576 && flagMneuTab > 245) {
     showNextTab.classList.add("deactivator");
   }
   if (windowSize > 576 && (windowSize >= 768 || flagMneuTab > 135)) {
     showNextTab.classList.add("deactivator");
   }
 });
-showPervTab.addEventListener("click",function(e){
+showPervTab.addEventListener("click", function (e) {
   e.stopPropagation();
   showNextTab.classList.remove("deactivator");
   if (windowSize > 576 && windowSize < 768 && flagMneuTab > 135) {
@@ -488,9 +496,32 @@ showPervTab.addEventListener("click",function(e){
     tabsContainer.classList.remove("clickShowMore");
     this.classList.remove("activator");
     tabsContainer.style.left = "48px";
-  } else if (windowSize < 576 && flagMneuTab > 0 ) {
+  } else if (windowSize < 576 && flagMneuTab > 0) {
     flagMneuTab -= 35;
     tabsContainer.style.left = `${-flagMneuTab}%`;
     console.log(flagMneuTab);
+  }
+});
+
+//video play button
+vid1.addEventListener("click", function () {
+  if (vid1.paused){
+    // vid1.setAttribute("controls", "controls"); 
+    vid1.play();
+    playVid.classList.add("deactivator");
+  }
+  else {
+    vid1.pause();
+    playVid.classList.remove("deactivator");
+  }
+});
+playVid.addEventListener("click", function () {
+  if (vid1.paused) {
+    // vid1.setAttribute("controls", "controls");
+    vid1.play();
+    playVid.classList.add("deactivator");
+  } else {
+    vid1.pause();
+    playVid.classList.remove("deactivator");
   }
 });
