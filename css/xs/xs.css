@@ -2709,7 +2709,7 @@ section.siteLinks {
         position: relative; }
         section.siteLinks > .container > .col > h3::after {
           display: block;
-          content: url(../../../img/Svg/svg-path.svg);
+          content: url(../../img/Svg/svg-path.svg);
           width: 20px;
           height: 22px;
           font-size: 16px;
