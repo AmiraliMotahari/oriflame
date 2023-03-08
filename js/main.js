@@ -39,6 +39,9 @@ let root = document.querySelector(":root");
 let rootStyle = getComputedStyle(root);
 let playVid = document.querySelector("button[id=playVid]");
 let vid1 = document.querySelector("video[id=vid1]");
+let siteLinkBtn = document.querySelectorAll("section.siteLinks>div.container>div.col>h3");
+let siteLinkContent = document.querySelectorAll("section.siteLinks>div.container>div.col>div.content");
+
 
 window.addEventListener("load", function () {
   this.addEventListener("resize", function () {
@@ -525,3 +528,19 @@ playVid.addEventListener("click", function () {
     playVid.classList.remove("deactivator");
   }
 });
+
+
+//site links
+siteLinkBtn.forEach((elem) => {
+  elem.addEventListener("click",function(e){
+    elem.nextElementSibling.classList.toggle("flexActivator");
+    siteLinkDeactivator(elem);
+  });
+})
+function siteLinkDeactivator(e) {
+  siteLinkBtn.forEach((elem) => {
+      if(elem !== e){
+        elem.nextElementSibling.classList.remove("flexActivator");
+      }
+  });
+}

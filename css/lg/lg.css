@@ -2214,9 +2214,6 @@ section.movie {
 .deactivator {
   display: none !important; }
 
-main {
-  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.05); }
-
 section.standards {
   width: 100%;
   margin-bottom: 200px; }
@@ -2249,3 +2246,194 @@ section.standards {
         max-width: 162px;
         object-fit: cover;
         object-position: center; }
+
+section.follow {
+  width: 100%;
+  border-top: 3px solid rgba(0, 0, 0, 0.06); }
+  section.follow > .container {
+    max-width: 984px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 40% 58%;
+    column-gap: 2%;
+    padding: 0 15px; }
+    section.follow > .container > .social {
+      display: flex;
+      flex-flow: column;
+      justify-content: start;
+      align-items: start; }
+      section.follow > .container > .social > h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--tDark);
+        text-transform: capitalize; }
+      section.follow > .container > .social > .socialBtn {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: start;
+        align-items: start;
+        column-gap: 12px;
+        padding: 5px; }
+        section.follow > .container > .social > .socialBtn > a {
+          text-decoration: none;
+          display: block; }
+          section.follow > .container > .social > .socialBtn > a > span {
+            font-size: 36px; }
+          section.follow > .container > .social > .socialBtn > a:nth-of-type(1) > span {
+            color: blue; }
+          section.follow > .container > .social > .socialBtn > a:nth-of-type(2) > span {
+            color: red; }
+          section.follow > .container > .social > .socialBtn > a:nth-of-type(3) > span {
+            color: transparent;
+            background: #ff9d00;
+            background: linear-gradient(30deg, #ff9d00 10%, #b813cf 78%, #3b55dd 100%);
+            -webkit-background-clip: text;
+            background-clip: text; }
+    section.follow > .container > .newsLetter {
+      display: flex;
+      flex-flow: column;
+      justify-content: start;
+      align-items: start; }
+      section.follow > .container > .newsLetter > h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--t5);
+        text-transform: capitalize;
+        margin-bottom: 20px; }
+      section.follow > .container > .newsLetter > p {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--tDark);
+        text-transform: capitalize;
+        margin-bottom: 10px; }
+      section.follow > .container > .newsLetter > form {
+        width: 100%; }
+        section.follow > .container > .newsLetter > form > label[for="newsLetterEmail"] {
+          display: block;
+          font-size: 10px;
+          font-weight: 400;
+          color: var(--tDark);
+          text-transform: capitalize; }
+          section.follow > .container > .newsLetter > form > label[for="newsLetterEmail"]:has(~ input[id="newsLetterEmail"]:valid), section.follow > .container > .newsLetter > form > label[for="newsLetterEmail"]:has(~ input[id="newsLetterEmail"]:focus) {
+            color: var(--tSuccessGreen); }
+          section.follow > .container > .newsLetter > form > label[for="newsLetterEmail"]:has(~ input[id="newsLetterEmail"]:focus:invalid) {
+            color: red; }
+        section.follow > .container > .newsLetter > form > input[id="newsLetterEmail"] {
+          all: unset;
+          display: block;
+          width: calc(100% * calc(330 / 570.7));
+          font-size: 14px;
+          font-weight: 400;
+          color: var(--tDark);
+          padding: 4px 0 5px;
+          text-transform: capitalize;
+          border-bottom: 1px solid var(--tDark);
+          margin-bottom: 10px;
+          position: relative; }
+          section.follow > .container > .newsLetter > form > input[id="newsLetterEmail"]:focus {
+            border-bottom-color: var(--tSuccessGreen); }
+            section.follow > .container > .newsLetter > form > input[id="newsLetterEmail"]:focus:invalid {
+              border-bottom-color: red;
+              margin-bottom: 5px; }
+              section.follow > .container > .newsLetter > form > input[id="newsLetterEmail"]:focus:invalid ~ p {
+                display: block; }
+          section.follow > .container > .newsLetter > form > input[id="newsLetterEmail"]:valid ~ input[type="submit"] {
+            background-color: var(--tSuccessGreen);
+            color: var(--tWhite); }
+            section.follow > .container > .newsLetter > form > input[id="newsLetterEmail"]:valid ~ input[type="submit"]:hover {
+              background-color: #489671; }
+        section.follow > .container > .newsLetter > form > p {
+          display: none;
+          font-size: 10px;
+          font-weight: 400;
+          color: red;
+          text-transform: capitalize;
+          margin-bottom: 10px; }
+        section.follow > .container > .newsLetter > form > input[type="submit"] {
+          all: unset;
+          width: 284px;
+          padding: 12px 23px;
+          text-align: center;
+          font-size: 14px;
+          font-weight: 700;
+          text-transform: uppercase;
+          background-color: rgba(0, 0, 0, 0.06);
+          border-radius: 25px;
+          color: var(--t5); }
+
+section.siteLinks {
+  width: 100%;
+  padding: 30px 15px;
+  background-color: whitesmoke; }
+  section.siteLinks > .container {
+    display: grid;
+    max-width: 984px;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(23.5%, 1fr));
+    column-gap: 2%;
+    justify-content: center;
+    align-items: start; }
+    section.siteLinks > .container > .col {
+      display: block; }
+      section.siteLinks > .container > .col > h3 {
+        text-align: left;
+        font-size: 14px;
+        font-weight: bolder;
+        color: var(--tDark);
+        margin: 10px 0;
+        text-transform: uppercase; }
+      section.siteLinks > .container > .col > .content {
+        display: flex;
+        flex-flow: column;
+        justify-content: left;
+        align-items: start; }
+        section.siteLinks > .container > .col > .content > a {
+          display: block;
+          text-decoration: none;
+          text-align: left;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 30px;
+          color: var(--tDark);
+          text-transform: capitalize; }
+          section.siteLinks > .container > .col > .content > a:hover {
+            color: #68BB93; }
+
+section.about {
+  width: 100%; }
+  section.about > p {
+    max-width: 580px;
+    margin: 40px auto;
+    padding: 0 15px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--tDark); }
+
+section.copyRight {
+  width: 100%; }
+  section.copyRight > .container {
+    display: flex;
+    max-width: 580px;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    margin: 40px auto;
+    padding: 0 15px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--tDark); }
+    section.copyRight > .container > .wrapper {
+      display: flex;
+      width: 100%;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      column-gap: 10px; }
+      section.copyRight > .container > .wrapper > a {
+        color: var(--tDark);
+        transition: 300ms ease; }
+        section.copyRight > .container > .wrapper > a:hover, section.copyRight > .container > .wrapper > a:active {
+          color: var(--tSuccessGreen); }
