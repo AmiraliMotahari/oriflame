@@ -677,7 +677,7 @@ section.mainContainer {
       left: 0;
       transition: 300ms; }
       section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer {
-        width: 400px;
+        max-width: 400px;
         height: calc(100% - 56px);
         background-color: var(--bgWhite);
         margin-left: auto;
@@ -685,6 +685,7 @@ section.mainContainer {
         opacity: 0;
         transition: 300ms; }
         section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer > h2 {
+          width: 100%;
           padding: 20px;
           font-size: 20px;
           font-weight: 700;
@@ -697,12 +698,16 @@ section.mainContainer {
           transform: translateY(-50%);
           text-align: center; }
           section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer > div.midContent > h3 {
+            width: 100%;
             font-size: 20px;
             font-weight: 700;
             text-transform: capitalize;
             color: var(--t5);
-            margin-bottom: 10px; }
+            margin-bottom: 10px;
+            text-align: center; }
           section.mainContainer > nav > div.shoppingBagPage > div.shoppingContainer > div.midContent > p {
+            width: 100%;
+            text-align: center;
             font-size: 14px;
             font-weight: 400;
             text-transform: capitalize;
@@ -1435,7 +1440,23 @@ section.whatsNew {
         font-weight: 400;
         line-height: 45px; }
         section.whatsNew > .whatsNewContainer > .title > a:hover {
-          background-color: #3333330A; }
+          background-color: rgba(51, 51, 51, 0.04); }
+        section.whatsNew > .whatsNewContainer > .title > a:active::after {
+          display: block;
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 25px;
+          z-index: -1;
+          background-color: #aaaaaaa0;
+          animation-name: buttonFill;
+          animation-duration: 300ms;
+          animation-fill-mode: forwards;
+          animation-iteration-count: 1;
+          animation-timing-function: ease-in-out; }
     section.whatsNew > .whatsNewContainer > .banner {
       grid-area: banner;
       height: 100%;
@@ -1515,7 +1536,7 @@ section.whatsNew {
                 text-align: center;
                 text-transform: capitalize;
                 color: var(--tWhite);
-                background-color: #63666A;
+                background-color: #63666a;
                 padding: 5px 10px;
                 border-radius: 10px;
                 position: absolute;
@@ -1643,7 +1664,23 @@ section.bestOffers {
         font-weight: 700;
         line-height: 45px; }
         section.bestOffers > .bestOffersContainer > .title > a:hover {
-          background-color: #3333330A; }
+          background-color: rgba(51, 51, 51, 0.04); }
+        section.bestOffers > .bestOffersContainer > .title > a:active::after {
+          display: block;
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 25px;
+          z-index: -1;
+          background-color: #aaaaaaa0;
+          animation-name: buttonFill;
+          animation-duration: 300ms;
+          animation-fill-mode: forwards;
+          animation-iteration-count: 1;
+          animation-timing-function: ease-in-out; }
     section.bestOffers > .bestOffersContainer > .banner {
       grid-area: banner;
       width: 250px;
@@ -1697,7 +1734,7 @@ section.bestOffers {
           white-space: nowrap;
           z-index: 1; }
           section.bestOffers > .bestOffersContainer > .banner > a > span:hover {
-            background-color: #3333330A; }
+            background-color: #3333330a; }
         section.bestOffers > .bestOffersContainer > .banner > a::after {
           content: "";
           display: block;
@@ -1902,12 +1939,30 @@ section.skinAd {
         text-decoration: none;
         font-size: 14px;
         font-weight: 400;
-        font-family: sansOriBold, sansOri, sans-serif;
         color: var(--tDark);
         text-transform: uppercase;
         padding: 12px 23px;
         border: 1px solid var(--tDark);
-        border-radius: 25px; }
+        border-radius: 25px;
+        position: relative; }
+        section.skinAd > .adContainer > .details > a:hover {
+          background-color: rgba(51, 51, 51, 0.04); }
+        section.skinAd > .adContainer > .details > a:active::after {
+          display: block;
+          content: "";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 25px;
+          z-index: 0;
+          background-color: #aaaaaaa0;
+          animation-name: buttonFill;
+          animation-duration: 300ms;
+          animation-fill-mode: forwards;
+          animation-iteration-count: 1;
+          animation-timing-function: ease-in-out; }
 
 section.hairNail {
   width: 100%;
@@ -1933,7 +1988,7 @@ section.hairNail {
         color: var(--tDark);
         font-size: 40px;
         font-weight: 700;
-        font-family: sansOriBold,sansOri,sans-serif;
+        font-family: sansOriBold, sansOri, sans-serif;
         text-transform: capitalize;
         text-align: center;
         text-size-adjust: 100%; }
@@ -1961,10 +2016,25 @@ section.hairNail {
           text-transform: uppercase;
           font-size: 14px;
           font-weight: 700;
-          font-family: sansOriBold,sansOri,sans-serif;
           line-height: 45px; }
           section.hairNail > .hairNailContainer > .title > div.paragraph > a:hover {
-            background-color: #3333330a; }
+            background-color: rgba(51, 51, 51, 0.04); }
+          section.hairNail > .hairNailContainer > .title > div.paragraph > a:active::after {
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 25px;
+            z-index: -1;
+            background-color: #aaaaaaa0;
+            animation-name: buttonFill;
+            animation-duration: 300ms;
+            animation-fill-mode: forwards;
+            animation-iteration-count: 1;
+            animation-timing-function: ease-in-out; }
     section.hairNail > .hairNailContainer > .banner {
       grid-area: banner;
       height: 100%;
@@ -1993,7 +2063,7 @@ section.hairNail {
           transform: translateX(-50%);
           font-size: 30px;
           font-weight: 700;
-          font-family: sansCondensedBold,sansOri,sans-serif;
+          font-family: sansCondensedBold, sansOri, sans-serif;
           text-transform: uppercase;
           text-align: center;
           color: var(--tDark);
@@ -2208,9 +2278,26 @@ section.peresentationBeauty {
             font-size: 14px;
             font-weight: 700;
             line-height: 45px;
-            transition: 300ms; }
+            transition: 300ms;
+            position: relative; }
             section.peresentationBeauty > .container > .wrapper > .content > a > span:hover {
-              background-color: #3333330a; }
+              background-color: rgba(51, 51, 51, 0.04); }
+            section.peresentationBeauty > .container > .wrapper > .content > a > span:active::after {
+              display: block;
+              content: "";
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              left: 0;
+              top: 0;
+              border-radius: 25px;
+              z-index: -1;
+              background-color: #aaaaaaa0;
+              animation-name: buttonFill;
+              animation-duration: 300ms;
+              animation-fill-mode: forwards;
+              animation-iteration-count: 1;
+              animation-timing-function: ease-in-out; }
 
 section.vipCustomer {
   width: 100%;
@@ -2282,7 +2369,7 @@ section.vipCustomer {
         top: 0;
         border-radius: 25px;
         z-index: -1;
-        background-color: var(--t9);
+        background-color: #aaaaaaa0;
         animation-name: buttonFill;
         animation-duration: 300ms;
         animation-fill-mode: forwards;
